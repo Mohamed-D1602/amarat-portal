@@ -196,6 +196,20 @@ footer small{display:block;font-size:.78rem;color:#7F9793;margin-top:1rem}
 .report-btn:hover{transform:translateY(-2px)}
 @keyframes waGlow{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 13px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 
+/* ---------- About the district ---------- */
+.about-intro{max-width:680px;margin:0 auto 2rem;text-align:center;color:var(--muted);font-size:.98rem;line-height:1.9}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-bottom:1.4rem}
+.acard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.4rem;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.acard:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(38,34,28,.1)}
+.acard::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--petrol),var(--gold));background-size:200% 100%;animation:shimmer 4s linear infinite}
+.acard .aicon{font-size:1.7rem}
+.acard h3{color:var(--petrol);font-size:1rem;margin:.4rem 0 .2rem}
+.acard p{font-size:.85rem;color:var(--muted);line-height:1.75}
+.fig-card{background:linear-gradient(135deg,#FFFDF4,var(--paper));border:1px solid var(--gold);border-radius:14px;padding:1.5rem 1.6rem;max-width:820px;margin:0 auto}
+.fig-card h3{color:#8A6D12;font-size:1.02rem}
+.fig-card p{font-size:.88rem;color:var(--muted);margin:.4rem 0 .8rem;line-height:1.85}
+.fig-invite{display:inline-block;background:#FBEAE4;color:var(--brick);font-size:.8rem;font-weight:700;border-radius:9px;padding:.45rem .9rem}
+
 /* ---------- Security alert strip ---------- */
 .alert-strip{background:linear-gradient(90deg,#7A2E1A,var(--brick),#7A2E1A);color:#FFE9E0;overflow:hidden;white-space:nowrap;padding:.55rem 0;font-size:.88rem;cursor:pointer}
 .alert-strip .track{display:inline-block;padding-inline-start:100%;animation:ticker 22s linear infinite}
@@ -334,6 +348,7 @@ html[dir="rtl"] .fab-item{flex-direction:row}
       <strong data-i18n="brand">بوابة حي العمارات</strong>
     </a>
     <ul class="nav-links" id="navLinks">
+      <li><a data-go="about" data-i18n="navAbout">عن الحي</a></li>
       <li><a data-go="committee" class="active" data-i18n="nav1">إعلانات اللجنة</a></li>
       <li><a data-go="streets" data-i18n="nav2">الشوارع</a></li>
       <li><a data-go="towers" data-i18n="nav3">الأبراج</a></li>
@@ -391,6 +406,25 @@ html[dir="rtl"] .fab-item{flex-direction:row}
 <div class="alert-strip" onclick="goTo('report')" role="button">
   <div class="track" id="alertTrack">⚠️ <strong>تنبيه أمني:</strong> بلاغات متكررة عن سرقة كوابل الكهرباء النحاسية بالحي — الرجاء الإبلاغ الفوري عن أي نشاط مشبوه عبر صفحة البلاغات &nbsp;&nbsp;•&nbsp;&nbsp; ⚡ أعمال إعادة التيار الكهربائي مستمرة شارعاً بشارع &nbsp;&nbsp;•&nbsp;&nbsp; 🧹 حملة إزالة مخلفات الحرب متواصلة يومياً</div>
 </div>
+
+<section id="about">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="abK">عن الحي</span>
+    <h2 data-i18n="abH">حي العمارات — قصة حي عريق</h2>
+  </div>
+  <p class="about-intro" data-i18n="abP">من أعرق أحياء العاصمة الخرطوم — نشأ في عهد الرئيس إبراهيم عبود، وسُمّي بالعمارات لأنها كانت المرة الأولى التي تُبنى فيها عمائر شاهقة بتصاميم حديثة في تاريخ السودان. حي عكس دوماً صورة السودان الجميلة بتركيبته المتجانسة من كل الشرائح، ولعب سكانه أدواراً رئيسية في الحياة الاقتصادية والسياسية والاجتماعية.</p>
+  <div class="about-grid">
+    <div class="acard"><span class="aicon">🏛️</span><h3 data-i18n="ab1h">التأسيس</h3><p data-i18n="ab1p">أُنشئ الحي في عهد الرئيس إبراهيم عبود مطلع الستينات، وصمم فيلاته وعماراته أبرز معماريي ذلك العصر.</p></div>
+    <div class="acard"><span class="aicon">✒️</span><h3 data-i18n="ab2h">التسمية</h3><p data-i18n="ab2p">قدّمت الحكومة لأول مرة في تاريخ السودان عمائر شاهقة بتصاميم جميلة — فحمل الحي اسمها: العمارات.</p></div>
+    <div class="acard"><span class="aicon">🗺️</span><h3 data-i18n="ab3h">التقسيم</h3><p data-i18n="ab3p">الدرجة الأولى من شارع ١ إلى ٣٥ بقطع مساحتها ٨٠٠م²، والدرجة الثانية من شارع ٣٧ إلى ٦١ بقطع ٦٠٠م² — والترقيم فردي من ١ إلى ٦١.</p></div>
+    <div class="acard"><span class="aicon">🛣️</span><h3 data-i18n="ab4h">الحدود</h3><p data-i18n="ab4p">يحده شرقاً شارع أفريقيا (شارع المطار)، وغرباً شارع محمد نجيب الذي سُمّي بهذا الاسم عام ١٩٨٤.</p></div>
+  </div>
+  <div class="fig-card">
+    <h3 data-i18n="abFigH">👥 السكان الأوائل والمناصب</h3>
+    <p data-i18n="abFigP">سكن الحي رموز لعبوا أدواراً رئيسية في تاريخ السودان الحديث — منهم الفريق إبراهيم عبود، والوزيران محمد توفيق ومحي الدين صابر، ونخبة من رواد المال والفكر والعمارة الذين جعلوا من بيوت الحي معرضاً مفتوحاً لأجمل العمارة السودانية.</p>
+    <span class="fig-invite" data-i18n="abInvite">✎ مساحة مفتوحة: شاركونا أسماء رواد الحي وسكانه الأوائل من ذاكرتكم — وستضاف هنا باسمكم</span>
+  </div>
+</section>
 
 <section id="committee">
   <div class="sec-head">
@@ -663,6 +697,21 @@ html[dir="rtl"] .fab-item{flex-direction:row}
 let L='ar';
 const T={
 brand:{ar:'بوابة حي العمارات',en:'Al Amarat Portal'},
+navAbout:{ar:'عن الحي',en:'About'},
+abK:{ar:'عن الحي',en:'About the District'},
+abH:{ar:'حي العمارات — قصة حي عريق',en:'Al Amarat — The Story of a Historic District'},
+abP:{ar:'من أعرق أحياء العاصمة الخرطوم — نشأ في عهد الرئيس إبراهيم عبود، وسُمّي بالعمارات لأنها كانت المرة الأولى التي تُبنى فيها عمائر شاهقة بتصاميم حديثة في تاريخ السودان. حي عكس دوماً صورة السودان الجميلة بتركيبته المتجانسة من كل الشرائح، ولعب سكانه أدواراً رئيسية في الحياة الاقتصادية والسياسية والاجتماعية.',en:'One of Khartoum\u2019s most historic districts — established in the era of President Ibrahim Abboud and named "Al Amarat" (The Buildings) because, for the first time in Sudan\u2019s history, the government built tall, beautifully designed apartment blocks. A district that has always reflected Sudan at its finest, with a harmonious mix of all walks of life, whose residents played leading roles in the country\u2019s economic, political and social story.'},
+ab1h:{ar:'التأسيس',en:'Establishment'},
+ab1p:{ar:'أُنشئ الحي في عهد الرئيس إبراهيم عبود مطلع الستينات، وصمم فيلاته وعماراته أبرز معماريي ذلك العصر.',en:'Founded in the early 1960s under President Ibrahim Abboud, its villas and buildings designed by the leading architects of the era.'},
+ab2h:{ar:'التسمية',en:'The Name'},
+ab2p:{ar:'قدّمت الحكومة لأول مرة في تاريخ السودان عمائر شاهقة بتصاميم جميلة — فحمل الحي اسمها: العمارات.',en:'For the first time in Sudan, the government built tall, beautifully designed apartment blocks — and the district took their name: Al Amarat.'},
+ab3h:{ar:'التقسيم',en:'The Layout'},
+ab3p:{ar:'الدرجة الأولى من شارع ١ إلى ٣٥ بقطع مساحتها ٨٠٠م²، والدرجة الثانية من شارع ٣٧ إلى ٦١ بقطع ٦٠٠م² — والترقيم فردي من ١ إلى ٦١.',en:'First class: Streets 1\u201335 with 800m\u00b2 plots; second class: Streets 37\u201361 with 600m\u00b2 plots \u2014 odd numbering from 1 to 61.'},
+ab4h:{ar:'الحدود',en:'Boundaries'},
+ab4p:{ar:'يحده شرقاً شارع أفريقيا (شارع المطار)، وغرباً شارع محمد نجيب الذي سُمّي بهذا الاسم عام ١٩٨٤.',en:'Bounded east by Africa Street (Airport Road) and west by Mohamed Naguib Street, named in 1984.'},
+abFigH:{ar:'👥 السكان الأوائل والمناصب',en:'👥 Early Residents & Notable Figures'},
+abFigP:{ar:'سكن الحي رموز لعبوا أدواراً رئيسية في تاريخ السودان الحديث — منهم الفريق إبراهيم عبود، والوزيران محمد توفيق ومحي الدين صابر، ونخبة من رواد المال والفكر والعمارة الذين جعلوا من بيوت الحي معرضاً مفتوحاً لأجمل العمارة السودانية.',en:'The district was home to figures who shaped modern Sudan — among them President Ibrahim Abboud and ministers Mohamed Tawfiq and Mohieldin Saber, alongside pioneers of business, thought and architecture who made its houses an open gallery of Sudan\u2019s finest design.'},
+abInvite:{ar:'✎ مساحة مفتوحة: شاركونا أسماء رواد الحي وسكانه الأوائل من ذاكرتكم — وستضاف هنا باسمكم',en:'✎ Open space: share the names of the district\u2019s pioneers and first residents from your memory \u2014 they will be added here, credited to you'},
 nav1:{ar:'إعلانات اللجنة',en:'Committee News'},
 nav2:{ar:'الشوارع',en:'Streets'},
 nav3:{ar:'الأبراج',en:'Towers'},
@@ -1132,7 +1181,7 @@ document.getElementById('rdesc').addEventListener('input',()=>document.getElemen
 buildStreets();renderResidents(false);updateTowerCounts();updateWaLinks();renderNews();renderLedger();
 
 // =============== Scroll reveal ===============
-document.querySelectorAll('.sec-head,.board,.roles,.legend,.street-grid,.street-hint,.tower,.form-card,.reg-bar,.reg-wrap,.reg-note,.report-card,.news-filters,.news-list,.bank-card,.ledger-wrap,.hcard,.ba-card,.ba-note').forEach(el=>el.classList.add('reveal'));
+document.querySelectorAll('.sec-head,.about-intro,.acard,.fig-card,.board,.roles,.legend,.street-grid,.street-hint,.tower,.form-card,.reg-bar,.reg-wrap,.reg-note,.report-card,.news-filters,.news-list,.bank-card,.ledger-wrap,.hcard,.ba-card,.ba-note').forEach(el=>el.classList.add('reveal'));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
