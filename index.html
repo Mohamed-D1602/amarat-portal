@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوابة حي العمارات | Al Amarat Portal</title>
+<meta name="description" content="البوابة الرسمية لحي العمارات — من شارع ١ إلى شارع ٦١ | The official portal of Al Amarat district — Streets 1 to 61">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Almarai:wght@300;400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol:#0F3D3E;
+  --petrol-deep:#0A2C2D;
+  --sand:#F4EEE3;
+  --paper:#FDFBF5;
+  --brick:#A94A32;
+  --gold:#C9A227;
+  --ink:#26221C;
+  --muted:#6E675C;
+  --line:#E2D9C8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Almarai','Montserrat',sans-serif;background:var(--sand);color:var(--ink);line-height:1.8}
+html[lang="en"] body{font-family:'Montserrat','Almarai',sans-serif}
+h1,h2,h3{font-family:'Cairo','Montserrat',sans-serif}
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3{font-family:'Montserrat','Cairo',sans-serif}
+a{color:inherit}
+section{scroll-margin-top:80px}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:0;right:0;left:0;z-index:60;background:rgba(15,61,62,.93);backdrop-filter:blur(10px)}
+.nav-glow{height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--brick),var(--gold),transparent);background-size:220% 100%;animation:shimmer 4.5s linear infinite}
+.nav-inner{max-width:1250px;margin:0 auto;padding:.6rem 1.25rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.8rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;cursor:pointer;justify-self:start}
+.brand .mark{width:38px;height:38px;border-radius:9px;background:var(--gold);display:grid;place-items:center;color:var(--petrol-deep);font-family:'Cairo';font-weight:900;animation:pulseGlow 3s ease-out infinite}
+.brand strong{font-family:'Cairo','Montserrat';font-weight:800;font-size:.95rem;white-space:nowrap}
+.nav-links{display:flex;gap:.1rem;list-style:none;align-items:center;flex-wrap:nowrap;justify-self:center}
+.nav-links a{position:relative;color:#DCE7E4;text-decoration:none;font-size:.82rem;padding:.4rem .6rem;border-radius:99px;transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+.nav-links a::after{content:"";position:absolute;bottom:1px;right:18%;left:18%;height:2px;border-radius:99px;background:linear-gradient(90deg,var(--gold),#F2DA8A,var(--gold));background-size:200% 100%;opacity:0;transition:opacity .2s;animation:shimmer 2.5s linear infinite}
+.nav-links a:hover,.nav-links a:focus-visible{color:#fff}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{opacity:1}
+.nav-links a.active{background:var(--gold);color:var(--petrol-deep);font-weight:700;animation:ctaGlow 2.6s ease-out infinite}
+.nav-links a.active::after{opacity:0}
+.nav-side{display:flex;align-items:center;gap:.5rem;justify-self:end}
+#langBtn{background:transparent;border:1.5px solid var(--gold);color:var(--gold);border-radius:99px;padding:.35rem .95rem;font-family:'Cairo','Montserrat';font-weight:800;font-size:.82rem;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+#langBtn:hover{background:var(--gold);color:var(--petrol-deep)}
+#menuBtn{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:.35rem .6rem;font-size:1.1rem;cursor:pointer}
+@media(max-width:1180px){
+  #menuBtn{display:block}
+  .nav-links{display:none;position:absolute;top:100%;right:0;left:0;flex-direction:column;background:var(--petrol-deep);padding:.75rem 1rem;gap:.35rem;border-bottom:2px solid var(--gold);align-items:stretch}
+  .nav-links.open{display:flex}
+  .nav-links a{text-align:center}
+}
+
+/* ---------- Hero ---------- */
+header{background:linear-gradient(165deg,var(--petrol) 0%,var(--petrol-deep) 75%);color:#fff;padding:7.5rem 1.25rem 0;position:relative;overflow:hidden}
+.hero-inner{max-width:1150px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.eyebrow{display:inline-block;border:1px solid rgba(201,162,39,.55);color:var(--gold);font-size:.8rem;letter-spacing:.5px;padding:.3rem 1rem;border-radius:99px;margin-bottom:1.2rem}
+.hero-inner h1{font-size:clamp(1.9rem,5.2vw,3.4rem);font-weight:900;line-height:1.35}
+.hero-inner h1 .accent{color:var(--gold)}
+.hero-inner p.lead{max-width:680px;margin:1rem auto 2rem;color:#C7D6D2;font-size:1.05rem;font-weight:300}
+.hero-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-family:'Cairo','Montserrat';font-weight:700;font-size:.95rem;padding:.7rem 1.6rem;border-radius:10px;transition:transform .15s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--petrol-deep)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff;background:transparent}
+.badge-row{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.8rem}
+.badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:99px;font-size:.78rem;padding:.3rem .9rem;color:#D9E4E1}
+.skyline{display:block;width:100%;height:auto;position:relative;z-index:1;margin-bottom:-1px}
+
+/* ---------- Sections ---------- */
+section{max-width:1150px;margin:0 auto;padding:4.2rem 1.25rem}
+.sec-head{text-align:center;margin-bottom:2.4rem}
+.sec-head .kicker{color:var(--brick);font-weight:700;font-size:.85rem;letter-spacing:1px}
+.sec-head h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;color:var(--petrol)}
+.sec-head p{color:var(--muted);max-width:620px;margin:.4rem auto 0;font-size:.95rem}
+
+/* ---------- Notice board ---------- */
+.board{background:var(--petrol-deep);border:10px solid #123B3C;border-radius:16px;padding:2.2rem 1.5rem;box-shadow:inset 0 0 60px rgba(0,0,0,.35);display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.note{background:var(--paper);border-radius:4px;padding:1.6rem 1.2rem 1.2rem;position:relative;box-shadow:0 8px 18px rgba(0,0,0,.35);transition:transform .2s}
+.note:nth-child(odd){transform:rotate(-1.3deg)}
+.note:nth-child(even){transform:rotate(1.1deg)}
+.note:hover{transform:rotate(0) scale(1.03)}
+.pin{position:absolute;top:-9px;right:50%;margin-right:-9px;width:18px;height:18px;border-radius:50%;box-shadow:0 2px 4px rgba(0,0,0,.4);border:2px solid rgba(255,255,255,.5)}
+.pin.red{background:var(--brick)}.pin.gold{background:var(--gold)}.pin.teal{background:#2C7A7B}
+.note .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:.15rem .6rem;border-radius:99px;margin-bottom:.5rem}
+.tag.maint{background:#FBEAE4;color:var(--brick)}
+.tag.clean{background:#E3F0EE;color:var(--petrol)}
+.tag.auth{background:#F7F0DA;color:#8A6D12}
+.note h3{font-size:1.05rem;color:var(--petrol);margin-bottom:.35rem}
+.note p{font-size:.87rem;color:var(--muted);line-height:1.7}
+.note time{display:block;margin-top:.7rem;font-size:.75rem;color:#A79E8E;border-top:1px dashed var(--line);padding-top:.5rem}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
+.role{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.4rem;text-align:center}
+.role .icon{font-size:1.8rem}
+.role h3{color:var(--petrol);font-size:1rem;margin:.5rem 0 .2rem}
+.role p{font-size:.83rem;color:var(--muted)}
+
+/* ---------- Streets grid + flashy counts ---------- */
+.street-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:.85rem}
+.street-card{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:1rem .4rem .8rem;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;font-family:'Cairo','Montserrat';position:relative;overflow:visible}
+.street-card:hover,.street-card:focus-visible{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 16px rgba(38,34,28,.1);outline:none}
+.street-card .num{font-size:1.55rem;font-weight:900;color:var(--petrol);line-height:1.2;transition:transform .15s}
+.street-card:hover .num{transform:scale(1.15)}
+.street-card .lbl{font-size:.72rem;color:var(--muted)}
+.street-card.has-res{border-color:var(--gold);background:linear-gradient(180deg,#FFFDF4,var(--paper))}
+.street-card.has-res .num{background:linear-gradient(90deg,var(--petrol),var(--gold),var(--brick),var(--petrol));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+@keyframes shimmer{0%{background-position:0% 0}100%{background-position:300% 0}}
+.res-badge{position:absolute;top:-9px;inset-inline-start:-9px;min-width:24px;height:24px;padding:0 .35rem;border-radius:99px;background:var(--gold);color:var(--petrol-deep);font-size:.75rem;font-weight:900;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.25);animation:pulseGlow 2.2s ease-out infinite}
+@keyframes pulseGlow{0%{box-shadow:0 0 0 0 rgba(201,162,39,.65)}70%{box-shadow:0 0 0 9px rgba(201,162,39,0)}100%{box-shadow:0 0 0 0 rgba(201,162,39,0)}}
+.street-hint{text-align:center;color:var(--muted);font-size:.85rem;margin-top:1.2rem}
+
+/* ---------- Street modal ---------- */
+.overlay{display:none;position:fixed;inset:0;background:rgba(10,44,45,.7);backdrop-filter:blur(4px);z-index:100;padding:1rem;overflow-y:auto}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{background:var(--sand);border-radius:18px;max-width:560px;width:100%;margin:3rem 0;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.modal-head{background:var(--petrol);color:#fff;padding:1.6rem 1.6rem 1.2rem;position:relative}
+.modal-head h3{font-size:1.5rem;font-weight:900}
+.modal-head p{color:#B9CBC7;font-size:.85rem}
+.modal-close{position:absolute;top:1rem;inset-inline-end:auto;inset-inline-start:1rem;background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.modal-body{padding:1.5rem 1.6rem 1.8rem}
+.m-row{display:flex;gap:.7rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.m-row .ic{font-size:1.2rem;line-height:1.6}
+.m-row strong{color:var(--petrol)}
+.m-row span{color:var(--muted);display:block;font-size:.84rem}
+.m-actions{display:flex;gap:.7rem;margin-top:1.3rem;flex-wrap:wrap}
+.m-actions .btn{flex:1;justify-content:center;font-size:.88rem;padding:.65rem 1rem}
+.btn-petrol{background:var(--petrol);color:#fff}
+.btn-wa{background:#25D366;color:#06301C}
+
+/* ---------- Towers + flashy counts ---------- */
+.tower-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
+.tower{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s;position:relative}
+.tower:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(38,34,28,.12)}
+.tower .roofline{height:6px;background:linear-gradient(90deg,var(--petrol),var(--gold),var(--brick),var(--gold),var(--petrol));background-size:250% 100%;animation:roofSlide 5s linear infinite}
+@keyframes roofSlide{0%{background-position:0% 0}100%{background-position:250% 0}}
+.tower .t-body{padding:1.3rem 1.3rem 1.5rem}
+.tower h3{color:var(--petrol);font-size:1.05rem}
+.tower .t-meta{font-size:.8rem;color:var(--muted);margin:.3rem 0 .8rem}
+.tower p{font-size:.85rem;color:var(--muted)}
+.tower .t-join{display:inline-block;margin-top:.9rem;font-family:'Cairo','Montserrat';font-weight:700;font-size:.82rem;color:var(--brick);text-decoration:none;border-bottom:2px solid var(--gold);cursor:pointer}
+.t-count{position:absolute;top:14px;inset-inline-end:14px;background:var(--gold);color:var(--petrol-deep);font-family:'Cairo','Montserrat';font-weight:900;font-size:.74rem;padding:.2rem .7rem;border-radius:99px;animation:pulseGlow 2.2s ease-out infinite}
+.t-count.zero{background:#E7E0D2;color:var(--muted);animation:none}
+
+/* ---------- Join form ---------- */
+#join .form-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;max-width:640px;margin:0 auto;padding:2.2rem;box-shadow:0 6px 20px rgba(38,34,28,.07);border-top:5px solid var(--gold)}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-weight:700;font-size:.88rem;margin-bottom:.35rem;color:var(--petrol)}
+.field input,.field select{width:100%;padding:.65rem .9rem;border:1.5px solid var(--line);border-radius:9px;background:#fff;font-family:inherit;font-size:.92rem;color:var(--ink)}
+.field input:focus,.field select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.radio-row{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.9rem}
+.radio-row label{display:flex;align-items:center;gap:.4rem;font-weight:400;cursor:pointer}
+.submit-btn{width:100%;background:var(--petrol);color:#fff;border:none;padding:.85rem;border-radius:10px;font-family:'Cairo','Montserrat';font-weight:700;font-size:1rem;cursor:pointer;transition:background .2s}
+.submit-btn:hover{background:var(--petrol-deep)}
+.submit-btn:disabled{opacity:.6;cursor:wait}
+.form-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:.8rem}
+#formOk{display:none;text-align:center;background:#E4F1E7;color:#256C3A;border-radius:10px;padding:1rem;font-weight:700;margin-top:1rem}
+#formErr{display:none;text-align:center;background:#FBEAE4;color:var(--brick);border-radius:10px;padding:1rem;font-weight:700;margin-top:1rem}
+.req{color:var(--brick)}
+.err{display:none;color:var(--brick);font-size:.78rem;margin-top:.3rem}
+.field.invalid input{border-color:var(--brick);outline:2px solid rgba(169,74,50,.25)}
+.field.invalid .err{display:block}
+
+/* ---------- Residents register ---------- */
+.reg-bar{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;flex-wrap:wrap}
+.reg-bar label{font-weight:700;color:var(--petrol);font-size:.9rem}
+.reg-bar select{padding:.5rem .9rem;border:1.5px solid var(--line);border-radius:9px;background:#fff;font-family:inherit;font-size:.9rem}
+.reg-count{margin-inline-start:auto;background:var(--gold);color:var(--petrol-deep);font-family:'Cairo','Montserrat';font-weight:800;font-size:.8rem;padding:.25rem .9rem;border-radius:99px}
+.reg-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--line);background:var(--paper)}
+.reg-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
+.reg-table thead{background:var(--petrol);color:#fff;font-family:'Cairo','Montserrat',sans-serif}
+.reg-table th{padding:.75rem .9rem;text-align:start;font-weight:700;font-size:.82rem;white-space:nowrap}
+.reg-table td{padding:.7rem .9rem;border-top:1px solid var(--line)}
+.reg-table tbody tr:nth-child(even){background:#FAF6EC}
+.reg-table tbody tr.new-row{animation:flashIn 1.6s ease}
+@keyframes flashIn{0%{background:#F1E3B8}100%{background:transparent}}
+.reg-table .st-chip{display:inline-block;background:#E3F0EE;color:var(--petrol);font-family:'Cairo','Montserrat';font-weight:800;font-size:.78rem;padding:.12rem .7rem;border-radius:99px;white-space:nowrap}
+.reg-table .phone{direction:ltr;unicode-bidi:embed;font-variant-numeric:tabular-nums}
+.reg-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:1rem}
+
+/* ---------- Footer ---------- */
+footer{background:var(--petrol-deep);color:#B9CBC7;margin-top:3rem;padding:3rem 1.25rem 2rem;text-align:center;scroll-margin-top:80px}
+footer .wa{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:#06301C;font-family:'Cairo','Montserrat';font-weight:800;text-decoration:none;padding:.8rem 1.8rem;border-radius:99px;margin-bottom:1.6rem;transition:transform .15s}
+footer .wa:hover{transform:scale(1.04)}
+footer small{display:block;font-size:.78rem;color:#7F9793;margin-top:1rem}
+/* ---------- Report a problem ---------- */
+#report .report-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;max-width:640px;margin:0 auto;padding:2.2rem;box-shadow:0 6px 20px rgba(38,34,28,.07);border-top:5px solid var(--brick)}
+#report textarea{width:100%;padding:.65rem .9rem;border:1.5px solid var(--line);border-radius:9px;background:#fff;font-family:inherit;font-size:.92rem;color:var(--ink);resize:vertical}
+#report textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.field.invalid textarea{border-color:var(--brick);outline:2px solid rgba(169,74,50,.25)}
+.report-btn{width:100%;background:#25D366;color:#06301C;border:none;padding:.85rem;border-radius:10px;font-family:'Cairo','Montserrat';font-weight:800;font-size:1rem;cursor:pointer;transition:transform .15s;box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:waGlow 2.4s ease-out infinite}
+.report-btn:hover{transform:translateY(-2px)}
+@keyframes waGlow{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 13px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ---------- About the district ---------- */
+.about-intro{max-width:680px;margin:0 auto 2rem;text-align:center;color:var(--muted);font-size:.98rem;line-height:1.9}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-bottom:1.4rem}
+.acard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.4rem;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.acard:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(38,34,28,.1)}
+.acard::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--petrol),var(--gold));background-size:200% 100%;animation:shimmer 4s linear infinite}
+.acard .aicon{font-size:1.7rem}
+.acard h3{color:var(--petrol);font-size:1rem;margin:.4rem 0 .2rem}
+.acard p{font-size:.85rem;color:var(--muted);line-height:1.75}
+.fig-card{background:linear-gradient(135deg,#FFFDF4,var(--paper));border:1px solid var(--gold);border-radius:14px;padding:1.5rem 1.6rem;max-width:820px;margin:0 auto}
+.fig-card h3{color:#8A6D12;font-size:1.02rem}
+.fig-card p{font-size:.88rem;color:var(--muted);margin:.4rem 0 .8rem;line-height:1.85}
+.fig-invite{display:inline-block;background:#FBEAE4;color:var(--brick);font-size:.8rem;font-weight:700;border-radius:9px;padding:.45rem .9rem}
+
+/* ---------- Security alert strip ---------- */
+.alert-strip{background:linear-gradient(90deg,#7A2E1A,var(--brick),#7A2E1A);color:#FFE9E0;overflow:hidden;white-space:nowrap;padding:.55rem 0;font-size:.88rem;cursor:pointer}
+.alert-strip .track{display:inline-block;padding-inline-start:100%;animation:ticker 22s linear infinite}
+@keyframes ticker{to{transform:translateX(100%)}}
+html[dir="ltr"] .alert-strip .track{animation:tickerL 22s linear infinite;padding-inline-start:100%}
+@keyframes tickerL{to{transform:translateX(-100%)}}
+.alert-strip strong{color:#fff}
+
+/* ---------- Street status ---------- */
+.legend{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.4rem;font-size:.8rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:.35rem}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.dot.ok{background:#2E9E5B}.dot.prog{background:#E0A82E}.dot.pend{background:#C4BBA9}
+.st-status{display:flex;gap:.3rem;justify-content:center;margin-top:.4rem}
+.st-status i{font-style:normal;font-size:.78rem;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#EFE8D8}
+.st-status i.ok{background:#DCF2E4}
+.st-status i.prog{background:#FAEEC9;animation:pulseSoft 1.8s ease-in-out infinite}
+@keyframes pulseSoft{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.m-status{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.m-chip{flex:1;min-width:110px;text-align:center;border-radius:10px;padding:.6rem .4rem;font-size:.78rem;font-weight:700}
+.m-chip.ok{background:#DCF2E4;color:#1E7A43}
+.m-chip.prog{background:#FAEEC9;color:#8A6D12}
+.m-chip.pend{background:#EFE8D8;color:var(--muted)}
+.m-chip small{display:block;font-weight:400;font-size:.72rem;margin-top:.15rem}
+
+/* ---------- News archive ---------- */
+.news-filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+.chip{border:1.5px solid var(--line);background:var(--paper);border-radius:99px;padding:.35rem 1.1rem;font-family:'Cairo','Montserrat';font-weight:700;font-size:.82rem;cursor:pointer;transition:all .2s;color:var(--muted)}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--petrol);color:#fff;border-color:var(--petrol)}
+.news-list{display:grid;gap:1rem;max-width:820px;margin:0 auto}
+.news-item{background:var(--paper);border:1px solid var(--line);border-inline-start:5px solid var(--gold);border-radius:12px;padding:1.2rem 1.4rem;transition:transform .15s,box-shadow .15s}
+.news-item:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(38,34,28,.1)}
+.news-item.cat-power{border-inline-start-color:#E0A82E}
+.news-item.cat-clean{border-inline-start-color:#2C7A7B}
+.news-item.cat-sec{border-inline-start-color:var(--brick)}
+.news-item.cat-water{border-inline-start-color:#3B82A0}
+.news-item h3{color:var(--petrol);font-size:1rem}
+.news-item p{font-size:.86rem;color:var(--muted);margin:.3rem 0}
+.news-item .nmeta{font-size:.74rem;color:#A79E8E;display:flex;gap:.8rem}
+
+/* ---------- Transparency ledger ---------- */
+.bank-card{background:linear-gradient(135deg,var(--petrol),var(--petrol-deep));color:#fff;border-radius:16px;padding:1.8rem;max-width:480px;margin:0 auto 2rem;text-align:center;box-shadow:0 12px 28px rgba(10,44,45,.35);position:relative;overflow:hidden}
+.bank-card::after{content:"";position:absolute;top:-60%;inset-inline-start:-30%;width:60%;height:220%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.14),transparent);transform:rotate(10deg);animation:bankShine 4.5s ease-in-out infinite}
+@keyframes bankShine{0%,100%{transform:translateX(-40%) rotate(10deg)}50%{transform:translateX(240%) rotate(10deg)}}
+.bank-card .blabel{color:var(--gold);font-size:.78rem;letter-spacing:1px}
+.bank-card .bacct{font-family:'Cairo','Montserrat';font-weight:900;font-size:1.5rem;margin:.3rem 0;letter-spacing:1px}
+.bank-card p{font-size:.82rem;color:#C7D6D2}
+.ledger-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--line);background:var(--paper);max-width:820px;margin:0 auto}
+.ledger{width:100%;border-collapse:collapse;font-size:.88rem;min-width:560px}
+.ledger thead{background:var(--petrol);color:#fff;font-family:'Cairo','Montserrat',sans-serif}
+.ledger th{padding:.75rem .9rem;text-align:start;font-size:.82rem;white-space:nowrap}
+.ledger td{padding:.7rem .9rem;border-top:1px solid var(--line)}
+.ledger tbody tr:nth-child(even){background:#FAF6EC}
+.amt-in{color:#1E7A43;font-weight:700;white-space:nowrap}
+.amt-out{color:var(--brick);font-weight:700;white-space:nowrap}
+.ledger tfoot td{font-family:'Cairo','Montserrat';font-weight:900;background:#F1E8D2;border-top:2px solid var(--gold)}
+
+/* ---------- Heroes ---------- */
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;max-width:900px;margin:0 auto}
+.hcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.8rem 1.4rem;text-align:center;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.hcard:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(38,34,28,.12)}
+.hcard::before{content:"";position:absolute;top:0;right:0;left:0;height:5px;background:linear-gradient(90deg,var(--gold),#F2DA8A,var(--gold));background-size:200% 100%;animation:shimmer 3s linear infinite}
+.hcard .laurel{font-size:2.2rem}
+.hcard h3{color:var(--petrol);font-size:1.05rem;margin:.5rem 0 .1rem}
+.hcard .hstreet{display:inline-block;background:var(--gold);color:var(--petrol-deep);font-family:'Cairo','Montserrat';font-weight:800;font-size:.74rem;padding:.15rem .8rem;border-radius:99px;margin:.3rem 0 .6rem}
+.hcard p{font-size:.84rem;color:var(--muted)}
+
+/* ---------- Before / After gallery ---------- */
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem}
+.ba-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.ba-card:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(38,34,28,.12)}
+.ba-frames{display:grid;grid-template-columns:1fr 1fr}
+.ba-frame{aspect-ratio:4/3;display:grid;place-items:center;font-size:2rem;position:relative}
+.ba-frame.before{background:repeating-linear-gradient(45deg,#5C534A,#5C534A 12px,#6B6157 12px,#6B6157 24px)}
+.ba-frame.after{background:linear-gradient(160deg,#CFE6DC,#9FCBBD)}
+.ba-frame .ba-tag{position:absolute;top:8px;inset-inline-start:8px;background:rgba(0,0,0,.55);color:#fff;font-size:.68rem;font-weight:700;padding:.15rem .6rem;border-radius:99px}
+.ba-frame.after .ba-tag{background:#1E7A43}
+.ba-card figcaption{padding:1rem 1.2rem;font-size:.85rem;color:var(--muted)}
+.ba-card figcaption strong{color:var(--petrol);display:block;font-family:'Cairo','Montserrat'}
+.ba-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:1.4rem}
+
+/* ---------- Floating action badges ---------- */
+.fab-wrap{position:fixed;bottom:22px;inset-inline-end:22px;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}
+html[dir="rtl"] .fab-wrap{align-items:flex-start}
+.fab-item{display:flex;align-items:center;gap:.6rem;flex-direction:row-reverse;opacity:0;transform:translateY(14px) scale(.6);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+html[dir="rtl"] .fab-item{flex-direction:row}
+.fab-wrap.open .fab-item{opacity:1;transform:none;pointer-events:auto}
+.fab-wrap.open .fab-item:nth-child(1){transition-delay:.16s}
+.fab-wrap.open .fab-item:nth-child(2){transition-delay:.12s}
+.fab-wrap.open .fab-item:nth-child(3){transition-delay:.08s}
+.fab-wrap.open .fab-item:nth-child(4){transition-delay:.04s}
+.fab-btn{width:52px;height:52px;border-radius:50%;border:none;display:grid;place-items:center;font-size:1.35rem;cursor:pointer;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.28);transition:transform .15s}
+.fab-btn:hover{transform:scale(1.12)}
+.fab-report{background:var(--brick);animation:pulseGlow 2.4s ease-out infinite}
+.fab-streets{background:var(--petrol)}
+.fab-towers{background:#2C7A7B}
+.fab-wa{background:#25D366;color:#06301C;animation:waGlow 2.4s ease-out infinite}
+.fab-label{background:var(--paper);color:var(--petrol);font-family:'Cairo','Montserrat';font-weight:800;font-size:.78rem;padding:.35rem .85rem;border-radius:99px;box-shadow:0 4px 12px rgba(0,0,0,.18);white-space:nowrap;border:1px solid var(--line)}
+.fab-main{width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--gold),#B98E1B);color:var(--petrol-deep);font-size:1.6rem;font-weight:900;cursor:pointer;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.32);animation:ctaGlow 2.6s ease-out infinite;transition:transform .25s ease}
+.fab-main:hover{transform:scale(1.08)}
+.fab-wrap.open .fab-main{transform:rotate(135deg)}
+@media(max-width:560px){.fab-wrap{bottom:16px;inset-inline-end:16px}.fab-label{font-size:.72rem}}
+
+/* ---------- Flashy extras ---------- */
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;z-index:0;animation:floatOrb 9s ease-in-out infinite}
+.orb1{width:340px;height:340px;background:radial-gradient(circle,#C9A227,transparent 70%);top:-80px;inset-inline-start:-90px}
+.orb2{width:280px;height:280px;background:radial-gradient(circle,#A94A32,transparent 70%);bottom:40px;inset-inline-end:-60px;animation-delay:-4.5s}
+@keyframes floatOrb{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.08)}}
+.hero-inner h1 .accent{background:linear-gradient(90deg,var(--gold),#F2DA8A,var(--gold),#B98E1B,var(--gold));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite}
+.btn-gold{box-shadow:0 0 0 0 rgba(201,162,39,.55);animation:ctaGlow 2.6s ease-out infinite}
+@keyframes ctaGlow{0%{box-shadow:0 0 0 0 rgba(201,162,39,.55)}70%{box-shadow:0 0 0 14px rgba(201,162,39,0)}100%{box-shadow:0 0 0 0 rgba(201,162,39,0)}}
+.skyline g rect{animation:twinkle 3.4s ease-in-out infinite}
+.skyline g rect:nth-child(3n){animation-delay:1.1s}
+.skyline g rect:nth-child(3n+1){animation-delay:2.2s}
+.skyline g rect:nth-child(4n){animation-duration:4.6s}
+@keyframes twinkle{0%,100%{opacity:.75}50%{opacity:.18}}
+.sec-head h2{position:relative;display:inline-block;padding-bottom:.45rem}
+.sec-head h2::after{content:"";position:absolute;bottom:0;right:20%;left:20%;height:3px;border-radius:99px;background:linear-gradient(90deg,transparent,var(--gold),var(--brick),var(--gold),transparent);background-size:200% 100%;animation:shimmer 3.5s linear infinite}
+.street-card::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.65) 50%,transparent 62%);background-size:250% 100%;background-position:130% 0;pointer-events:none}
+.street-card:hover::after{animation:shine .7s ease forwards}
+@keyframes shine{to{background-position:-130% 0}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.confetti{position:fixed;top:-12px;z-index:200;border-radius:2px;pointer-events:none;animation:confFall linear forwards}
+@keyframes confFall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(105vh) rotate(720deg)}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" data-go="top">
+      <span class="mark">ع</span>
+      <strong data-i18n="brand">بوابة حي العمارات</strong>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a data-go="about" data-i18n="navAbout">عن الحي</a></li>
+      <li><a data-go="committee" class="active" data-i18n="nav1">إعلانات اللجنة</a></li>
+      <li><a data-go="streets" data-i18n="nav2">الشوارع</a></li>
+      <li><a data-go="towers" data-i18n="nav3">الأبراج</a></li>
+      <li><a data-go="join" data-i18n="nav4">انضم إلينا</a></li>
+      <li><a data-go="residents" data-i18n="nav5">سجل السكان</a></li>
+      <li><a data-go="report" data-i18n="nav7">بلّغ عن مشكلة</a></li>
+      <li><a id="waNav" href="#" target="_blank" rel="noopener" data-i18n="nav6">تواصل</a></li>
+    </ul>
+    <div class="nav-side">
+      <button id="langBtn">English</button>
+      <button id="menuBtn" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+  <div class="nav-glow"></div>
+</nav>
+
+<header id="top">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="hero-inner">
+    <span class="eyebrow" data-i18n="eyebrow">لجنة تسيير حي العمارات</span>
+    <h1><span data-i18n="h1a">حي العمارات — </span><span class="accent" data-i18n="h1b">من شارع ١ إلى شارع ٦١</span></h1>
+    <p class="lead" data-i18n="lead">بوابة واحدة تجمع كل سكان الحي: لكل شارع مجتمعه الخاص، ولكل برج سكانه، وللجنة صوت يصل للجميع. صيانة، نظافة، تواصل مع الجهات الرسمية — كل ذلك في مكان واحد.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" data-go="join" data-i18n="cta1">سجّل وانضم لشارعك</a>
+      <a class="btn btn-ghost" data-go="streets" data-i18n="cta2">استكشف الشوارع</a>
+    </div>
+    <div class="badge-row">
+      <span class="badge" data-i18n="bdg1">🛣️ ٣١ شارعاً (أرقام فردية ١–٦١)</span>
+      <span class="badge" data-i18n="bdg2">🏙️ أبراج ومبانٍ سكنية</span>
+      <span class="badge" data-i18n="bdg3">🏛️ لجنة تسيير رسمية</span>
+      <span class="badge" data-i18n="bdg4">💬 مجتمع لكل شارع</span>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="0" y="70" width="120" height="80" fill="#0C3334"/>
+    <rect x="140" y="25" width="150" height="125" fill="#114445"/>
+    <rect x="310" y="80" width="110" height="70" fill="#0C3334"/>
+    <rect x="440" y="10" width="170" height="140" fill="#114445"/>
+    <rect x="630" y="60" width="130" height="90" fill="#0C3334"/>
+    <rect x="780" y="30" width="160" height="120" fill="#114445"/>
+    <rect x="960" y="70" width="120" height="80" fill="#0C3334"/>
+    <rect x="1100" y="18" width="160" height="132" fill="#114445"/>
+    <rect x="1280" y="65" width="160" height="85" fill="#0C3334"/>
+    <g fill="#C9A227" opacity=".75">
+      <rect x="175" y="45" width="13" height="13"/><rect x="205" y="45" width="13" height="13"/><rect x="175" y="75" width="13" height="13"/><rect x="235" y="105" width="13" height="13"/>
+      <rect x="475" y="30" width="13" height="13"/><rect x="505" y="60" width="13" height="13"/><rect x="535" y="30" width="13" height="13"/><rect x="475" y="90" width="13" height="13"/>
+      <rect x="815" y="50" width="13" height="13"/><rect x="845" y="80" width="13" height="13"/><rect x="875" y="50" width="13" height="13"/>
+      <rect x="1135" y="38" width="13" height="13"/><rect x="1165" y="68" width="13" height="13"/><rect x="1195" y="98" width="13" height="13"/>
+    </g>
+    <rect x="0" y="148" width="1440" height="2" fill="#F4EEE3"/>
+  </svg>
+</header>
+
+<div class="alert-strip" onclick="goTo('report')" role="button">
+  <div class="track" id="alertTrack">⚠️ <strong>تنبيه أمني:</strong> بلاغات متكررة عن سرقة كوابل الكهرباء النحاسية بالحي — الرجاء الإبلاغ الفوري عن أي نشاط مشبوه عبر صفحة البلاغات &nbsp;&nbsp;•&nbsp;&nbsp; ⚡ أعمال إعادة التيار الكهربائي مستمرة شارعاً بشارع &nbsp;&nbsp;•&nbsp;&nbsp; 🧹 حملة إزالة مخلفات الحرب متواصلة يومياً</div>
+</div>
+
+<section id="about">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="abK">عن الحي</span>
+    <h2 data-i18n="abH">حي العمارات — قصة حي عريق</h2>
+  </div>
+  <p class="about-intro" data-i18n="abP">من أعرق أحياء العاصمة الخرطوم — نشأ في عهد الرئيس إبراهيم عبود، وسُمّي بالعمارات لأنها كانت المرة الأولى التي تُبنى فيها عمائر شاهقة بتصاميم حديثة في تاريخ السودان. حي عكس دوماً صورة السودان الجميلة بتركيبته المتجانسة من كل الشرائح، ولعب سكانه أدواراً رئيسية في الحياة الاقتصادية والسياسية والاجتماعية.</p>
+  <div class="about-grid">
+    <div class="acard"><span class="aicon">🏛️</span><h3 data-i18n="ab1h">التأسيس</h3><p data-i18n="ab1p">أُنشئ الحي في عهد الرئيس إبراهيم عبود مطلع الستينات، وصمم فيلاته وعماراته أبرز معماريي ذلك العصر.</p></div>
+    <div class="acard"><span class="aicon">✒️</span><h3 data-i18n="ab2h">التسمية</h3><p data-i18n="ab2p">قدّمت الحكومة لأول مرة في تاريخ السودان عمائر شاهقة بتصاميم جميلة — فحمل الحي اسمها: العمارات.</p></div>
+    <div class="acard"><span class="aicon">🗺️</span><h3 data-i18n="ab3h">التقسيم</h3><p data-i18n="ab3p">الدرجة الأولى من شارع ١ إلى ٣٥ بقطع مساحتها ٨٠٠م²، والدرجة الثانية من شارع ٣٧ إلى ٦١ بقطع ٦٠٠م² — والترقيم فردي من ١ إلى ٦١.</p></div>
+    <div class="acard"><span class="aicon">🛣️</span><h3 data-i18n="ab4h">الحدود</h3><p data-i18n="ab4p">يحده شرقاً شارع أفريقيا (شارع المطار)، وغرباً شارع محمد نجيب الذي سُمّي بهذا الاسم عام ١٩٨٤.</p></div>
+  </div>
+  <div class="fig-card">
+    <h3 data-i18n="abFigH">👥 السكان الأوائل والمناصب</h3>
+    <p data-i18n="abFigP">سكن الحي رموز لعبوا أدواراً رئيسية في تاريخ السودان الحديث — منهم الفريق إبراهيم عبود، والوزيران محمد توفيق ومحي الدين صابر، ونخبة من رواد المال والفكر والعمارة الذين جعلوا من بيوت الحي معرضاً مفتوحاً لأجمل العمارة السودانية.</p>
+    <span class="fig-invite" data-i18n="abInvite">✎ مساحة مفتوحة: شاركونا أسماء رواد الحي وسكانه الأوائل من ذاكرتكم — وستضاف هنا باسمكم</span>
+  </div>
+</section>
+
+<section id="committee">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="comK">لوحة إعلانات اللجنة</span>
+    <h2 data-i18n="comH">أخبار لجنة تسيير العمارات</h2>
+    <p data-i18n="comP">الإعلانات الرسمية تصل من هنا لكل سكان الحي — كل الشوارع وكل الأبراج</p>
+  </div>
+  <div class="board">
+    <article class="note">
+      <span class="pin red"></span>
+      <span class="tag maint" data-i18n="n1t">صيانة</span>
+      <h3 data-i18n="n1h">حملة صيانة الإنارة العامة</h3>
+      <p data-i18n="n1p">تبدأ اللجنة بالتنسيق مع الجهات المختصة حملة صيانة أعمدة الإنارة من شارع ١ حتى شارع ١٥ خلال الأسبوع القادم.</p>
+      <time data-i18n="n1d">الأحد ٥ يوليو ٢٠٢٦</time>
+    </article>
+    <article class="note">
+      <span class="pin teal"></span>
+      <span class="tag clean" data-i18n="n2t">نظافة</span>
+      <h3 data-i18n="n2h">مواعيد رفع النفايات الجديدة</h3>
+      <p data-i18n="n2p">تم الاتفاق مع شركة النظافة على جدول جديد: الشوارع الفردية من ١–٣١ أيام السبت والثلاثاء، ومن ٣٣–٦١ أيام الأحد والأربعاء.</p>
+      <time data-i18n="n2d">الخميس ٢ يوليو ٢٠٢٦</time>
+    </article>
+    <article class="note">
+      <span class="pin gold"></span>
+      <span class="tag auth" data-i18n="n3t">جهات رسمية</span>
+      <h3 data-i18n="n3h">خطاب اللجنة لمكتب المحلية</h3>
+      <p data-i18n="n3p">رفعت اللجنة خطاباً رسمياً بشأن تحسين شبكة تصريف مياه الأمطار قبل موسم الخريف، وسيتم إطلاعكم على الرد فور وصوله.</p>
+      <time data-i18n="n3d">الاثنين ٢٩ يونيو ٢٠٢٦</time>
+    </article>
+  </div>
+  <div class="roles">
+    <div class="role"><span class="icon">🔧</span><h3 data-i18n="r1h">الصيانة العامة</h3><p data-i18n="r1p">الإنارة، الطرق، والمرافق المشتركة</p></div>
+    <div class="role"><span class="icon">🧹</span><h3 data-i18n="r2h">نظافة الشوارع</h3><p data-i18n="r2p">متابعة شركة النظافة وجداول الرفع</p></div>
+    <div class="role"><span class="icon">🏛️</span><h3 data-i18n="r3h">التواصل مع الجهات</h3><p data-i18n="r3p">المحلية، الكهرباء، المياه، والأمن</p></div>
+    <div class="role"><span class="icon">📢</span><h3 data-i18n="r4h">إبلاغ السكان</h3><p data-i18n="r4p">تعميم الأخبار لكل الشوارع والأبراج</p></div>
+  </div>
+</section>
+
+<section id="streets">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="stK">مجتمعات الشوارع</span>
+    <h2 data-i18n="stH">لوحة حالة الشوارع</h2>
+    <p data-i18n="stP">تابع حالة الكهرباء والمياه والنظافة في شارعك — أينما كنت في العالم</p>
+  </div>
+  <div class="legend">
+    <span><span class="dot ok"></span><span data-i18n="lgOk">تم ✓</span></span>
+    <span><span class="dot prog"></span><span data-i18n="lgProg">جارٍ العمل</span></span>
+    <span><span class="dot pend"></span><span data-i18n="lgPend">قيد الانتظار</span></span>
+    <span>⚡ <span data-i18n="uPower">كهرباء</span></span>
+    <span>💧 <span data-i18n="uWater">مياه</span></span>
+    <span>🧹 <span data-i18n="uClean">نظافة</span></span>
+  </div>
+  <div class="street-grid" id="streetGrid"></div>
+  <p class="street-hint" data-i18n="stHint">💡 اضغط على رقم شارعك — الأرقام الفردية من ١ إلى ٦١</p>
+</section>
+
+<div class="overlay" id="streetOverlay" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-head">
+      <button class="modal-close" onclick="closeStreet()" aria-label="إغلاق">✕</button>
+      <h3 id="mTitle">—</h3>
+      <p data-i18n="mSub">مجتمع سكان الشارع — حي العمارات</p>
+    </div>
+    <div class="modal-body">
+      <div class="m-status">
+        <div class="m-chip" id="msPower">⚡</div>
+        <div class="m-chip" id="msWater">💧</div>
+        <div class="m-chip" id="msClean">🧹</div>
+      </div>
+      <div class="m-row"><span class="ic">👤</span><div><strong data-i18n="mRepL">ممثل الشارع</strong><span id="mRep" data-i18n="mRepV">سيتم تعيينه بعد اكتمال التسجيل</span></div></div>
+      <div class="m-row"><span class="ic">👥</span><div><strong data-i18n="mCntL">الأعضاء المسجلون</strong><span id="mCount">—</span></div></div>
+      <div class="m-row"><span class="ic">📢</span><div><strong data-i18n="mNwsL">آخر خبر في الشارع</strong><span id="mNews" data-i18n="mNwsV">لا توجد أخبار بعد — كن أول من يشارك</span></div></div>
+      <div class="m-actions">
+        <a class="btn btn-wa" id="mWa" href="#" target="_blank" rel="noopener" data-i18n="mWaB">💬 مجموعة الشارع</a>
+        <button class="btn btn-petrol" onclick="joinFromModal()" data-i18n="mJoinB">سجّل في هذا الشارع</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="towers">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="twK">الأبراج والمباني السكنية</span>
+    <h2 data-i18n="twH">مجتمع لكل برج</h2>
+    <p data-i18n="twP">سكان الأبراج لهم مساحتهم الخاصة داخل مجتمع الشارع — الشارة الذهبية تعرض عدد المسجلين</p>
+  </div>
+  <div class="tower-grid">
+    <div class="tower" data-bldg="برج النيل السكني"><div class="roofline"></div><span class="t-count"></span><div class="t-body">
+      <h3 data-i18n="t1h">برج النيل السكني</h3><div class="t-meta" data-i18n="t1m">شارع ١٥ · ١٢ طابقاً · ٤٨ شقة</div>
+      <p data-i18n="t1p">مجتمع سكان البرج: إعلانات المبنى، اشتراكات الصيانة، وجدول المصاعد.</p>
+      <a class="t-join" data-go="join" data-bset="برج النيل السكني" data-i18n="tJoin1">انضم لسكان البرج ←</a>
+    </div></div>
+    <div class="tower" data-bldg="أبراج العمارات الحديثة"><div class="roofline"></div><span class="t-count"></span><div class="t-body">
+      <h3 data-i18n="t2h">أبراج العمارات الحديثة</h3><div class="t-meta" data-i18n="t2m">شارع ٤١ · برجان · ٩٦ شقة</div>
+      <p data-i18n="t2p">تنسيق مباشر بين سكان البرجين ولجنة الحي في الصيانة والنظافة.</p>
+      <a class="t-join" data-go="join" data-bset="أبراج العمارات الحديثة" data-i18n="tJoin2">انضم لسكان البرج ←</a>
+    </div></div>
+    <div class="tower" data-bldg="مجمّع شارع ٣٥"><div class="roofline"></div><span class="t-count"></span><div class="t-body">
+      <h3 data-i18n="t3h">مجمّع سكني — شارع ٣٥</h3><div class="t-meta" data-i18n="t3m">شارع ٣٥ · ٨ طوابق · ٣٢ شقة</div>
+      <p data-i18n="t3p">مساحة خاصة لسكان المجمّع مرتبطة بمجتمع شارع ٣٥.</p>
+      <a class="t-join" data-go="join" data-bset="مجمّع شارع ٣٥" data-i18n="tJoin3">انضم لسكان المبنى ←</a>
+    </div></div>
+    <div class="tower"><div class="roofline"></div><div class="t-body">
+      <h3 data-i18n="t4h">برجك غير مذكور؟</h3><div class="t-meta" data-i18n="t4m">أي شارع · أي مبنى</div>
+      <p data-i18n="t4p">سجّل اسم مبناك في نموذج الانضمام وستضيفه اللجنة لقائمة الأبراج.</p>
+      <a class="t-join" data-go="join" data-i18n="tJoin4">أضف مبناك ←</a>
+    </div></div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="nwK">أرشيف الأخبار</span>
+    <h2 data-i18n="nwH">كل الأخبار — بدون زحمة الرسائل</h2>
+    <p data-i18n="nwP">أهم ما نشرته اللجنة والسكان، مصنّفاً حسب الموضوع بدلاً من الضياع في آلاف الرسائل</p>
+  </div>
+  <div class="news-filters" id="newsFilters"></div>
+  <div class="news-list" id="newsList"></div>
+</section>
+
+<section id="transparency">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="trK">الشفافية المالية</span>
+    <h2 data-i18n="trH">كشف حساب علني للجميع</h2>
+    <p data-i18n="trP">كل جنيه وارد وكل جنيه منصرف — موثّق أمام كل السكان، داخل السودان وخارجه</p>
+  </div>
+  <div class="bank-card">
+    <div class="blabel" data-i18n="bkL">حساب التبرعات الرسمي — بنكك</div>
+    <div class="bacct">XXXX XXXX XXXX</div>
+    <p data-i18n="bkP">باسم لجنة تسيير حي العمارات — سيُعلن الرقم الرسمي بعد اعتماد اللجنة</p>
+  </div>
+  <div class="ledger-wrap">
+    <table class="ledger">
+      <thead><tr><th data-i18n="lh1">التاريخ</th><th data-i18n="lh2">البيان</th><th data-i18n="lh3">وارد</th><th data-i18n="lh4">منصرف</th></tr></thead>
+      <tbody id="ledgerBody"></tbody>
+      <tfoot><tr><td colspan="2" data-i18n="lhBal">الرصيد الحالي</td><td colspan="2" class="amt-in" id="ledgerBal"></td></tr></tfoot>
+    </table>
+  </div>
+  <p class="reg-note" data-i18n="trNote">📊 الأرقام أدناه توضيحية للعرض — ستُستبدل بالبيانات الفعلية من أمين الصندوق</p>
+</section>
+
+<section id="heroes">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="hrK">أبطال الحي</span>
+    <h2 data-i18n="hrH">وجوه لا ينساها حي العمارات</h2>
+    <p data-i18n="hrP">تقديراً لمن وقفوا مع الحي في أصعب أيامه — والقائمة تطول بإذن الله</p>
+  </div>
+  <div class="hero-grid">
+    <div class="hcard"><span class="laurel">🏅</span><h3 data-i18n="h1n">الأخ عمر</h3><span class="hstreet" data-i18n="h1s">شارع ٤٧</span><p data-i18n="h1p">استقبل العائدين من الخارج وذلّل لهم الصعاب — من النظافة إلى إعادة توصيل الخدمات</p></div>
+    <div class="hcard"><span class="laurel">🎖️</span><h3 data-i18n="h2n">خالد عادل</h3><span class="hstreet" data-i18n="h2s">حي العمارات</span><p data-i18n="h2p">قاد جهود إزالة الذخائر والمخلفات الخطرة من الحي وحماية أرواح السكان</p></div>
+    <div class="hcard"><span class="laurel">🏆</span><h3 data-i18n="h3n">فرق النظافة التطوعية</h3><span class="hstreet" data-i18n="h3s">كل الشوارع</span><p data-i18n="h3p">دفارات ولودرات وسواعد سمراء تعمل يومياً لإزالة مخلفات الحرب وإعادة الحياة للحي</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="gK">قبل وبعد</span>
+    <h2 data-i18n="gH">الحي يعود للحياة</h2>
+    <p data-i18n="gP">توثيق رحلة إعادة الإعمار — شارعاً بشارع</p>
+  </div>
+  <div class="ba-grid">
+    <figure class="ba-card"><div class="ba-frames">
+      <div class="ba-frame before"><span class="ba-tag" data-i18n="gBf">قبل</span>🏚️</div>
+      <div class="ba-frame after"><span class="ba-tag" data-i18n="gAf">بعد</span>🏢</div>
+    </div><figcaption><strong data-i18n="g1t">حملة إزالة الأنقاض</strong><span data-i18n="g1c">رفع مخلفات الحرب من الشوارع الرئيسية</span></figcaption></figure>
+    <figure class="ba-card"><div class="ba-frames">
+      <div class="ba-frame before"><span class="ba-tag" data-i18n="gBf">قبل</span>🌑</div>
+      <div class="ba-frame after"><span class="ba-tag" data-i18n="gAf">بعد</span>💡</div>
+    </div><figcaption><strong data-i18n="g2t">عودة الكهرباء</strong><span data-i18n="g2c">إعادة التيار شارعاً بشارع رغم سرقة الكوابل</span></figcaption></figure>
+    <figure class="ba-card"><div class="ba-frames">
+      <div class="ba-frame before"><span class="ba-tag" data-i18n="gBf">قبل</span>🦟</div>
+      <div class="ba-frame after"><span class="ba-tag" data-i18n="gAf">بعد</span>🌿</div>
+    </div><figcaption><strong data-i18n="g3t">حملات الرش والنظافة</strong><span data-i18n="g3c">مكافحة حمى الضنك والملاريا وتنظيف الساحات</span></figcaption></figure>
+  </div>
+  <p class="ba-note" data-i18n="gNote">📸 الإطارات أعلاه مؤقتة — سترفع اللجنة الصور الحقيقية من أرشيف المجموعة (٤٨٣ صورة وفيديو)</p>
+</section>
+
+<section id="join">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="jK">التسجيل</span>
+    <h2 data-i18n="jH">انضم لمجتمع شارعك وبرجك</h2>
+    <p data-i18n="jP">اكتب اسمك، شارعك، ورقم هاتفك — وستصلك دعوة مجموعة شارعك ومبناك</p>
+  </div>
+  <div class="form-card">
+    <div class="form-row">
+      <div class="field"><label for="jname"><span data-i18n="fName">الاسم الكامل</span> <span class="req">*</span></label><input id="jname" type="text" data-i18n-ph="phName" placeholder="مثال: محمد أحمد عثمان" autocomplete="name"><div class="err" id="errName" data-i18n="eName">الرجاء كتابة الاسم الكامل (حرفان على الأقل)</div></div>
+      <div class="field"><label for="jphone"><span data-i18n="fPhone">رقم الهاتف (واتساب)</span> <span class="req">*</span></label><input id="jphone" type="tel" value="0912345678" placeholder="09xxxxxxxx" dir="ltr" style="text-align:right" autocomplete="tel"><div class="err" id="errPhone" data-i18n="ePhone">الرجاء إدخال رقم صحيح — يبدأ بـ 09 أو 01 أو +249</div></div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label for="jstreet" data-i18n="fStreet">الشارع</label><select id="jstreet"></select></div>
+      <div class="field"><label for="jbldg" data-i18n="fBldg">اسم البرج / المبنى (اختياري)</label><input id="jbldg" type="text" data-i18n-ph="phBldg" placeholder="مثال: برج النيل السكني"></div>
+    </div>
+    <div class="field">
+      <label data-i18n="fType">نوع السكن</label>
+      <div class="radio-row">
+        <label><input type="radio" name="jtype" checked> <span data-i18n="ty1">منزل على الشارع</span></label>
+        <label><input type="radio" name="jtype"> <span data-i18n="ty2">شقة في برج / عمارة</span></label>
+        <label><input type="radio" name="jtype"> <span data-i18n="ty3">محل / نشاط تجاري</span></label>
+      </div>
+    </div>
+    <input type="checkbox" id="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <button class="submit-btn" id="submitBtn" onclick="submitJoin()" data-i18n="fBtn">سجّل الآن</button>
+    <div id="formOk"></div>
+    <div id="formErr" data-i18n="fErr">⚠️ حدث خطأ في الإرسال — حاول مرة أخرى أو تواصل معنا عبر الواتساب</div>
+    <p class="form-note" data-i18n="fNote">يصل تسجيلك مباشرة لبريد اللجنة — بياناتك لا تُنشر على الموقع</p>
+  </div>
+</section>
+
+<section id="residents">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="rgK">سجل السكان</span>
+    <h2 data-i18n="rgH">هكذا تظهر القائمة بعد التسجيل</h2>
+    <p data-i18n="rgP">كل تسجيل جديد يُضاف هنا — يمكن تصفية القائمة حسب الشارع</p>
+  </div>
+  <div class="reg-bar">
+    <label for="regFilter" data-i18n="rgF">عرض:</label>
+    <select id="regFilter"></select>
+    <span class="reg-count" id="regCount"></span>
+  </div>
+  <div class="reg-wrap">
+    <table class="reg-table" aria-label="سجل السكان">
+      <thead><tr><th>#</th><th data-i18n="th1">الاسم</th><th data-i18n="th2">الشارع</th><th data-i18n="th3">المبنى / البرج</th><th data-i18n="th4">الهاتف</th><th data-i18n="th5">نوع السكن</th><th data-i18n="th6">التاريخ</th></tr></thead>
+      <tbody id="regBody"></tbody>
+    </table>
+  </div>
+  <p class="reg-note" data-i18n="rgNote">🔒 في النسخة النهائية: أرقام الهواتف تظهر مموّهة للعامة وتُعرض كاملة للجنة فقط</p>
+</section>
+
+<section id="report">
+  <div class="sec-head">
+    <span class="kicker" data-i18n="rpK">بلاغات السكان</span>
+    <h2 data-i18n="rpH">بلّغ عن مشكلة</h2>
+    <p data-i18n="rpP">إنارة معطّلة؟ نفايات متراكمة؟ حفرة في الطريق؟ أرسل بلاغك مباشرة لواتساب اللجنة</p>
+  </div>
+  <div class="report-card">
+    <div class="form-row">
+      <div class="field"><label for="rtype" data-i18n="rpTypeL">نوع المشكلة</label>
+        <select id="rtype">
+          <option data-i18n="rt1">إنارة</option>
+          <option data-i18n="rt2">نظافة / نفايات</option>
+          <option data-i18n="rt3">طرق / حفر</option>
+          <option data-i18n="rt4">مياه / صرف</option>
+          <option data-i18n="rt5">أمن / سلامة</option>
+          <option data-i18n="rt6">أخرى</option>
+        </select>
+      </div>
+      <div class="field"><label for="rstreet" data-i18n="rpStreetL">الشارع</label><select id="rstreet"></select></div>
+    </div>
+    <div class="field"><label for="rdesc"><span data-i18n="rpDescL">وصف المشكلة</span> <span class="req">*</span></label><textarea id="rdesc" rows="4" data-i18n-ph="phDesc" placeholder="مثال: عمود الإنارة أمام المنزل رقم ١٢ معطّل منذ أسبوع"></textarea><div class="err" id="errDesc" data-i18n="eDesc">الرجاء وصف المشكلة (٥ أحرف على الأقل)</div></div>
+    <button class="report-btn" onclick="sendReport()" data-i18n="rpBtn">💬 إرسال البلاغ عبر الواتساب</button>
+    <p class="form-note" data-i18n="rpNote">يُفتح الواتساب برسالة جاهزة إلى رقم اللجنة — أرفق صورة قبل الإرسال إن أمكن</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <a class="wa" id="footWa" href="#" target="_blank" rel="noopener" data-i18n="ftWa">💬 مجموعة اخبار لجنة تسيير العمارات</a>
+  <p data-i18n="ftLine">لجنة تسيير حي العمارات — في خدمة كل السكان، من شارع ١ إلى شارع ٦١</p>
+  <small data-i18n="ftSmall">© ٢٠٢٦ بوابة حي العمارات · نسخة تجريبية للعرض على اللجنة</small>
+</footer>
+<div class="fab-wrap" id="fabWrap">
+  <div class="fab-item"><span class="fab-label" data-i18n="fbReport">بلّغ عن مشكلة</span><button class="fab-btn fab-report" data-go="report">🚨</button></div>
+  <div class="fab-item"><span class="fab-label" data-i18n="fbStreets">الشوارع</span><button class="fab-btn fab-streets" data-go="streets">🛣️</button></div>
+  <div class="fab-item"><span class="fab-label" data-i18n="fbTowers">الأبراج</span><button class="fab-btn fab-towers" data-go="towers">🏙️</button></div>
+  <div class="fab-item"><span class="fab-label" data-i18n="fbWa">تواصل معنا</span><a class="fab-btn fab-wa" id="fabWa" href="#" target="_blank" rel="noopener">💬</a></div>
+  <button class="fab-main" id="fabMain" aria-label="إجراءات سريعة">＋</button>
+</div>
+
+<script>
+// =============== i18n ===============
+let L='ar';
+const T={
+brand:{ar:'بوابة حي العمارات',en:'Al Amarat Portal'},
+navAbout:{ar:'عن الحي',en:'About'},
+abK:{ar:'عن الحي',en:'About the District'},
+abH:{ar:'حي العمارات — قصة حي عريق',en:'Al Amarat — The Story of a Historic District'},
+abP:{ar:'من أعرق أحياء العاصمة الخرطوم — نشأ في عهد الرئيس إبراهيم عبود، وسُمّي بالعمارات لأنها كانت المرة الأولى التي تُبنى فيها عمائر شاهقة بتصاميم حديثة في تاريخ السودان. حي عكس دوماً صورة السودان الجميلة بتركيبته المتجانسة من كل الشرائح، ولعب سكانه أدواراً رئيسية في الحياة الاقتصادية والسياسية والاجتماعية.',en:'One of Khartoum\u2019s most historic districts — established in the era of President Ibrahim Abboud and named "Al Amarat" (The Buildings) because, for the first time in Sudan\u2019s history, the government built tall, beautifully designed apartment blocks. A district that has always reflected Sudan at its finest, with a harmonious mix of all walks of life, whose residents played leading roles in the country\u2019s economic, political and social story.'},
+ab1h:{ar:'التأسيس',en:'Establishment'},
+ab1p:{ar:'أُنشئ الحي في عهد الرئيس إبراهيم عبود مطلع الستينات، وصمم فيلاته وعماراته أبرز معماريي ذلك العصر.',en:'Founded in the early 1960s under President Ibrahim Abboud, its villas and buildings designed by the leading architects of the era.'},
+ab2h:{ar:'التسمية',en:'The Name'},
+ab2p:{ar:'قدّمت الحكومة لأول مرة في تاريخ السودان عمائر شاهقة بتصاميم جميلة — فحمل الحي اسمها: العمارات.',en:'For the first time in Sudan, the government built tall, beautifully designed apartment blocks — and the district took their name: Al Amarat.'},
+ab3h:{ar:'التقسيم',en:'The Layout'},
+ab3p:{ar:'الدرجة الأولى من شارع ١ إلى ٣٥ بقطع مساحتها ٨٠٠م²، والدرجة الثانية من شارع ٣٧ إلى ٦١ بقطع ٦٠٠م² — والترقيم فردي من ١ إلى ٦١.',en:'First class: Streets 1\u201335 with 800m\u00b2 plots; second class: Streets 37\u201361 with 600m\u00b2 plots \u2014 odd numbering from 1 to 61.'},
+ab4h:{ar:'الحدود',en:'Boundaries'},
+ab4p:{ar:'يحده شرقاً شارع أفريقيا (شارع المطار)، وغرباً شارع محمد نجيب الذي سُمّي بهذا الاسم عام ١٩٨٤.',en:'Bounded east by Africa Street (Airport Road) and west by Mohamed Naguib Street, named in 1984.'},
+abFigH:{ar:'👥 السكان الأوائل والمناصب',en:'👥 Early Residents & Notable Figures'},
+abFigP:{ar:'سكن الحي رموز لعبوا أدواراً رئيسية في تاريخ السودان الحديث — منهم الفريق إبراهيم عبود، والوزيران محمد توفيق ومحي الدين صابر، ونخبة من رواد المال والفكر والعمارة الذين جعلوا من بيوت الحي معرضاً مفتوحاً لأجمل العمارة السودانية.',en:'The district was home to figures who shaped modern Sudan — among them President Ibrahim Abboud and ministers Mohamed Tawfiq and Mohieldin Saber, alongside pioneers of business, thought and architecture who made its houses an open gallery of Sudan\u2019s finest design.'},
+abInvite:{ar:'✎ مساحة مفتوحة: شاركونا أسماء رواد الحي وسكانه الأوائل من ذاكرتكم — وستضاف هنا باسمكم',en:'✎ Open space: share the names of the district\u2019s pioneers and first residents from your memory \u2014 they will be added here, credited to you'},
+nav1:{ar:'إعلانات اللجنة',en:'Committee News'},
+nav2:{ar:'الشوارع',en:'Streets'},
+nav3:{ar:'الأبراج',en:'Towers'},
+nav4:{ar:'انضم إلينا',en:'Join Us'},
+nav5:{ar:'سجل السكان',en:'Residents'},
+nav6:{ar:'تواصل',en:'Contact'},
+nav7:{ar:'بلّغ عن مشكلة',en:'Report a Problem'},
+rpK:{ar:'بلاغات السكان',en:'Resident Reports'},
+rpH:{ar:'بلّغ عن مشكلة',en:'Report a Problem'},
+rpP:{ar:'إنارة معطّلة؟ نفايات متراكمة؟ حفرة في الطريق؟ أرسل بلاغك مباشرة لواتساب اللجنة',en:'Broken street light? Uncollected waste? Pothole? Send your report straight to the committee WhatsApp'},
+rpTypeL:{ar:'نوع المشكلة',en:'Problem type'},
+rt1:{ar:'إنارة',en:'Street lighting'},
+rt2:{ar:'نظافة / نفايات',en:'Cleaning / waste'},
+rt3:{ar:'طرق / حفر',en:'Roads / potholes'},
+rt4:{ar:'مياه / صرف',en:'Water / drainage'},
+rt5:{ar:'أمن / سلامة',en:'Security / safety'},
+rt6:{ar:'أخرى',en:'Other'},
+rpStreetL:{ar:'الشارع',en:'Street'},
+rpDescL:{ar:'وصف المشكلة',en:'Describe the problem'},
+phDesc:{ar:'مثال: عمود الإنارة أمام المنزل رقم ١٢ معطّل منذ أسبوع',en:'e.g. The lamp post outside house No. 12 has been out for a week'},
+eDesc:{ar:'الرجاء وصف المشكلة (٥ أحرف على الأقل)',en:'Please describe the problem (at least 5 characters)'},
+rpBtn:{ar:'💬 إرسال البلاغ عبر الواتساب',en:'💬 Send report via WhatsApp'},
+rpNote:{ar:'يُفتح الواتساب برسالة جاهزة إلى رقم اللجنة — أرفق صورة قبل الإرسال إن أمكن',en:'WhatsApp opens with a ready message to the committee number — attach a photo before sending if you can'},
+rpMsg:{ar:'🚨 بلاغ من بوابة حي العمارات',en:'🚨 Report from Al Amarat Portal'},
+waHi:{ar:'السلام عليكم، أتواصل معكم من بوابة حي العمارات',en:'Hello, I am contacting you from the Al Amarat Portal'},
+alert:{ar:'⚠️ <strong>تنبيه أمني:</strong> بلاغات متكررة عن سرقة كوابل الكهرباء النحاسية بالحي — الرجاء الإبلاغ الفوري عن أي نشاط مشبوه عبر صفحة البلاغات &nbsp;&nbsp;•&nbsp;&nbsp; ⚡ أعمال إعادة التيار الكهربائي مستمرة شارعاً بشارع &nbsp;&nbsp;•&nbsp;&nbsp; 🧹 حملة إزالة مخلفات الحرب متواصلة يومياً',en:'⚠️ <strong>Security alert:</strong> repeated reports of copper power-cable theft — please report any suspicious activity immediately via the reports page &nbsp;&nbsp;•&nbsp;&nbsp; ⚡ Power restoration continues street by street &nbsp;&nbsp;•&nbsp;&nbsp; 🧹 Daily war-debris clearance campaign ongoing'},
+lgOk:{ar:'تم ✓',en:'Done ✓'},lgProg:{ar:'جارٍ العمل',en:'In progress'},lgPend:{ar:'قيد الانتظار',en:'Pending'},
+uPower:{ar:'كهرباء',en:'Power'},uWater:{ar:'مياه',en:'Water'},uClean:{ar:'نظافة',en:'Cleaning'},
+stat0:{ar:'قيد الانتظار',en:'Pending'},stat1:{ar:'جارٍ العمل',en:'In progress'},stat2:{ar:'تم ✓',en:'Done ✓'},
+nwK:{ar:'أرشيف الأخبار',en:'News Archive'},
+nwH:{ar:'كل الأخبار — بدون زحمة الرسائل',en:'All the News — Without the Scroll'},
+nwP:{ar:'أهم ما نشرته اللجنة والسكان، مصنّفاً حسب الموضوع بدلاً من الضياع في آلاف الرسائل',en:'The most important updates from the committee and residents, organised by topic instead of buried in thousands of messages'},
+fltAll:{ar:'الكل',en:'All'},fltPower:{ar:'⚡ كهرباء',en:'⚡ Power'},fltClean:{ar:'🧹 نظافة',en:'🧹 Cleaning'},fltSec:{ar:'🚨 أمن',en:'🚨 Security'},fltWater:{ar:'💧 مياه',en:'💧 Water'},
+trK:{ar:'الشفافية المالية',en:'Financial Transparency'},
+trH:{ar:'كشف حساب علني للجميع',en:'A Public Account for Everyone'},
+trP:{ar:'كل جنيه وارد وكل جنيه منصرف — موثّق أمام كل السكان، داخل السودان وخارجه',en:'Every pound in and every pound out — documented for all residents, in Sudan and abroad'},
+bkL:{ar:'حساب التبرعات الرسمي — بنكك',en:'Official donations account — Bankak'},
+bkP:{ar:'باسم لجنة تسيير حي العمارات — سيُعلن الرقم الرسمي بعد اعتماد اللجنة',en:'In the name of the Al Amarat Committee — the official number will be announced once approved'},
+lh1:{ar:'التاريخ',en:'Date'},lh2:{ar:'البيان',en:'Description'},lh3:{ar:'وارد',en:'In'},lh4:{ar:'منصرف',en:'Out'},
+lhBal:{ar:'الرصيد الحالي',en:'Current balance'},
+trNote:{ar:'📊 الأرقام أدناه توضيحية للعرض — ستُستبدل بالبيانات الفعلية من أمين الصندوق',en:'📊 Figures below are illustrative — to be replaced with actual data from the treasurer'},
+hrK:{ar:'أبطال الحي',en:'Neighbourhood Heroes'},
+hrH:{ar:'وجوه لا ينساها حي العمارات',en:'Faces Al Amarat Will Never Forget'},
+hrP:{ar:'تقديراً لمن وقفوا مع الحي في أصعب أيامه — والقائمة تطول بإذن الله',en:'Honouring those who stood by the district in its hardest days — a list that keeps growing'},
+h1n:{ar:'الأخ عمر',en:'Omar'},h1s:{ar:'شارع ٤٧',en:'Street 47'},
+h1p:{ar:'استقبل العائدين من الخارج وذلّل لهم الصعاب — من النظافة إلى إعادة توصيل الخدمات',en:'Welcomed returnees from abroad and smoothed every obstacle — from cleaning to reconnecting services'},
+h2n:{ar:'خالد عادل',en:'Khalid Adil'},h2s:{ar:'حي العمارات',en:'Al Amarat'},
+h2p:{ar:'قاد جهود إزالة الذخائر والمخلفات الخطرة من الحي وحماية أرواح السكان',en:'Led the removal of ammunition and hazardous remnants, protecting residents\u2019 lives'},
+h3n:{ar:'فرق النظافة التطوعية',en:'Volunteer Cleaning Crews'},h3s:{ar:'كل الشوارع',en:'All streets'},
+h3p:{ar:'دفارات ولودرات وسواعد سمراء تعمل يومياً لإزالة مخلفات الحرب وإعادة الحياة للحي',en:'Trucks, loaders and tireless hands working daily to clear war debris and bring the district back to life'},
+gK:{ar:'قبل وبعد',en:'Before & After'},
+gH:{ar:'الحي يعود للحياة',en:'The District Comes Back to Life'},
+gP:{ar:'توثيق رحلة إعادة الإعمار — شارعاً بشارع',en:'Documenting the reconstruction journey — street by street'},
+gBf:{ar:'قبل',en:'Before'},gAf:{ar:'بعد',en:'After'},
+g1t:{ar:'حملة إزالة الأنقاض',en:'Rubble Clearance Campaign'},g1c:{ar:'رفع مخلفات الحرب من الشوارع الرئيسية',en:'Clearing war debris from the main streets'},
+g2t:{ar:'عودة الكهرباء',en:'The Power Returns'},g2c:{ar:'إعادة التيار شارعاً بشارع رغم سرقة الكوابل',en:'Restoring supply street by street despite cable theft'},
+g3t:{ar:'حملات الرش والنظافة',en:'Spraying & Cleaning Drives'},g3c:{ar:'مكافحة حمى الضنك والملاريا وتنظيف الساحات',en:'Fighting dengue and malaria and cleaning public spaces'},
+gNote:{ar:'📸 الإطارات أعلاه مؤقتة — سترفع اللجنة الصور الحقيقية من أرشيف المجموعة (٤٨٣ صورة وفيديو)',en:'📸 Placeholder frames — the committee will upload real photos from the group archive (483 photos & videos)'},
+fbReport:{ar:'بلّغ عن مشكلة',en:'Report a problem'},fbStreets:{ar:'الشوارع',en:'Streets'},fbTowers:{ar:'الأبراج',en:'Towers'},fbWa:{ar:'تواصل معنا',en:'Contact us'},
+eyebrow:{ar:'لجنة تسيير حي العمارات',en:'Al Amarat District Management Committee'},
+h1a:{ar:'حي العمارات — ',en:'Al Amarat District — '},
+h1b:{ar:'من شارع ١ إلى شارع ٦١',en:'Streets 1 to 61'},
+lead:{ar:'بوابة واحدة تجمع كل سكان الحي: لكل شارع مجتمعه الخاص، ولكل برج سكانه، وللجنة صوت يصل للجميع. صيانة، نظافة، تواصل مع الجهات الرسمية — كل ذلك في مكان واحد.',en:'One portal for the whole neighbourhood: every street has its own community, every tower its residents, and the committee a voice that reaches everyone. Maintenance, cleaning, liaison with the authorities — all in one place.'},
+cta1:{ar:'سجّل وانضم لشارعك',en:'Register & join your street'},
+cta2:{ar:'استكشف الشوارع',en:'Explore the streets'},
+bdg1:{ar:'🛣️ ٣١ شارعاً (أرقام فردية ١–٦١)',en:'🛣️ 31 streets (odd numbers 1–61)'},
+bdg2:{ar:'🏙️ أبراج ومبانٍ سكنية',en:'🏙️ Residential towers & buildings'},
+bdg3:{ar:'🏛️ لجنة تسيير رسمية',en:'🏛️ Official management committee'},
+bdg4:{ar:'💬 مجتمع لكل شارع',en:'💬 A community for every street'},
+comK:{ar:'لوحة إعلانات اللجنة',en:'Committee Notice Board'},
+comH:{ar:'أخبار لجنة تسيير العمارات',en:'Al Amarat Committee News'},
+comP:{ar:'الإعلانات الرسمية تصل من هنا لكل سكان الحي — كل الشوارع وكل الأبراج',en:'Official announcements reach every resident from here — all streets, all towers'},
+n1t:{ar:'صيانة',en:'Maintenance'},
+n1h:{ar:'حملة صيانة الإنارة العامة',en:'Street Lighting Maintenance Drive'},
+n1p:{ar:'تبدأ اللجنة بالتنسيق مع الجهات المختصة حملة صيانة أعمدة الإنارة من شارع ١ حتى شارع ١٥ خلال الأسبوع القادم.',en:'In coordination with the authorities, the committee begins a lamp-post maintenance drive covering Streets 1 to 15 next week.'},
+n1d:{ar:'الأحد ٥ يوليو ٢٠٢٦',en:'Sunday 5 July 2026'},
+n2t:{ar:'نظافة',en:'Cleaning'},
+n2h:{ar:'مواعيد رفع النفايات الجديدة',en:'New Waste Collection Schedule'},
+n2p:{ar:'تم الاتفاق مع شركة النظافة على جدول جديد: الشوارع الفردية من ١–٣١ أيام السبت والثلاثاء، ومن ٣٣–٦١ أيام الأحد والأربعاء.',en:'A new schedule agreed with the cleaning company: Streets 1–31 on Saturdays & Tuesdays; Streets 33–61 on Sundays & Wednesdays.'},
+n2d:{ar:'الخميس ٢ يوليو ٢٠٢٦',en:'Thursday 2 July 2026'},
+n3t:{ar:'جهات رسمية',en:'Authorities'},
+n3h:{ar:'خطاب اللجنة لمكتب المحلية',en:'Committee Letter to the Locality Office'},
+n3p:{ar:'رفعت اللجنة خطاباً رسمياً بشأن تحسين شبكة تصريف مياه الأمطار قبل موسم الخريف، وسيتم إطلاعكم على الرد فور وصوله.',en:'The committee has submitted a formal letter on improving rainwater drainage ahead of the autumn season. You will be informed as soon as a reply arrives.'},
+n3d:{ar:'الاثنين ٢٩ يونيو ٢٠٢٦',en:'Monday 29 June 2026'},
+r1h:{ar:'الصيانة العامة',en:'General Maintenance'},r1p:{ar:'الإنارة، الطرق، والمرافق المشتركة',en:'Lighting, roads & shared facilities'},
+r2h:{ar:'نظافة الشوارع',en:'Street Cleaning'},r2p:{ar:'متابعة شركة النظافة وجداول الرفع',en:'Overseeing the cleaning company & schedules'},
+r3h:{ar:'التواصل مع الجهات',en:'Authority Liaison'},r3p:{ar:'المحلية، الكهرباء، المياه، والأمن',en:'Locality, electricity, water & security'},
+r4h:{ar:'إبلاغ السكان',en:'Resident Updates'},r4p:{ar:'تعميم الأخبار لكل الشوارع والأبراج',en:'Broadcasting news to all streets & towers'},
+stK:{ar:'مجتمعات الشوارع',en:'Street Communities'},
+stH:{ar:'لكل شارع مساحته الخاصة',en:'Every Street Has Its Own Space'},
+stP:{ar:'اختر شارعك لترى ممثل الشارع، مجموعة الواتساب الخاصة به، وعدد المسجلين — الشارات الذهبية تعني سكاناً مسجلين',en:'Pick your street to see its representative, WhatsApp group and member count — gold badges mean registered residents'},
+stHint:{ar:'💡 اضغط على رقم شارعك — الأرقام الفردية من ١ إلى ٦١',en:'💡 Tap your street number — odd numbers from 1 to 61'},
+stLbl:{ar:'شارع',en:'Street'},
+mSub:{ar:'مجتمع سكان الشارع — حي العمارات',en:'Street residents community — Al Amarat'},
+mRepL:{ar:'ممثل الشارع',en:'Street representative'},
+mRepV:{ar:'سيتم تعيينه بعد اكتمال التسجيل',en:'To be appointed once registration completes'},
+mCntL:{ar:'الأعضاء المسجلون',en:'Registered members'},
+mNwsL:{ar:'آخر خبر في الشارع',en:'Latest street news'},
+mNwsV:{ar:'لا توجد أخبار بعد — كن أول من يشارك',en:'No news yet — be the first to share'},
+mWaB:{ar:'💬 مجموعة الشارع',en:'💬 Street group'},
+mJoinB:{ar:'سجّل في هذا الشارع',en:'Register on this street'},
+twK:{ar:'الأبراج والمباني السكنية',en:'Residential Towers & Buildings'},
+twH:{ar:'مجتمع لكل برج',en:'A Community for Every Tower'},
+twP:{ar:'سكان الأبراج لهم مساحتهم الخاصة داخل مجتمع الشارع — الشارة الذهبية تعرض عدد المسجلين',en:'Tower residents have their own space within the street community — the gold badge shows registered members'},
+t1h:{ar:'برج النيل السكني',en:'Al Nile Residential Tower'},
+t1m:{ar:'شارع ١٥ · ١٢ طابقاً · ٤٨ شقة',en:'Street 15 · 12 floors · 48 flats'},
+t1p:{ar:'مجتمع سكان البرج: إعلانات المبنى، اشتراكات الصيانة، وجدول المصاعد.',en:'The tower community: building notices, maintenance fees and lift schedules.'},
+t2h:{ar:'أبراج العمارات الحديثة',en:'Modern Amarat Towers'},
+t2m:{ar:'شارع ٤١ · برجان · ٩٦ شقة',en:'Street 41 · 2 towers · 96 flats'},
+t2p:{ar:'تنسيق مباشر بين سكان البرجين ولجنة الحي في الصيانة والنظافة.',en:'Direct coordination between both towers and the district committee.'},
+t3h:{ar:'مجمّع سكني — شارع ٣٥',en:'Residential Complex — Street 35'},
+t3m:{ar:'شارع ٣٥ · ٨ طوابق · ٣٢ شقة',en:'Street 35 · 8 floors · 32 flats'},
+t3p:{ar:'مساحة خاصة لسكان المجمّع مرتبطة بمجتمع شارع ٣٥.',en:'A dedicated space for the complex, linked to the Street 35 community.'},
+t4h:{ar:'برجك غير مذكور؟',en:'Tower not listed?'},
+t4m:{ar:'أي شارع · أي مبنى',en:'Any street · any building'},
+t4p:{ar:'سجّل اسم مبناك في نموذج الانضمام وستضيفه اللجنة لقائمة الأبراج.',en:'Add your building name in the registration form and the committee will list it here.'},
+tJoin1:{ar:'انضم لسكان البرج ←',en:'Join this tower →'},
+tJoin2:{ar:'انضم لسكان البرج ←',en:'Join this tower →'},
+tJoin3:{ar:'انضم لسكان المبنى ←',en:'Join this building →'},
+tJoin4:{ar:'أضف مبناك ←',en:'Add your building →'},
+jK:{ar:'التسجيل',en:'Registration'},
+jH:{ar:'انضم لمجتمع شارعك وبرجك',en:'Join Your Street & Tower Community'},
+jP:{ar:'اكتب اسمك، شارعك، ورقم هاتفك — وستصلك دعوة مجموعة شارعك ومبناك',en:'Enter your name, street and phone number — your street & building group invite will follow'},
+fName:{ar:'الاسم الكامل',en:'Full name'},
+phName:{ar:'مثال: محمد أحمد عثمان',en:'e.g. Mohamed Ahmed Osman'},
+eName:{ar:'الرجاء كتابة الاسم الكامل (حرفان على الأقل)',en:'Please enter your full name (at least 2 characters)'},
+fPhone:{ar:'رقم الهاتف (واتساب)',en:'Phone number (WhatsApp)'},
+ePhone:{ar:'الرجاء إدخال رقم صحيح — يبدأ بـ 09 أو 01 أو +249',en:'Please enter a valid number — starting 09, 01 or +249'},
+fStreet:{ar:'الشارع',en:'Street'},
+fBldg:{ar:'اسم البرج / المبنى (اختياري)',en:'Tower / building name (optional)'},
+phBldg:{ar:'مثال: برج النيل السكني',en:'e.g. Al Nile Tower'},
+fType:{ar:'نوع السكن',en:'Residence type'},
+ty1:{ar:'منزل على الشارع',en:'House on the street'},
+ty2:{ar:'شقة في برج / عمارة',en:'Flat in a tower / building'},
+ty3:{ar:'محل / نشاط تجاري',en:'Shop / business'},
+fBtn:{ar:'سجّل الآن',en:'Register now'},
+fBtnW:{ar:'جاري الإرسال...',en:'Sending...'},
+fErr:{ar:'⚠️ حدث خطأ في الإرسال — حاول مرة أخرى أو تواصل معنا عبر الواتساب',en:'⚠️ Something went wrong — please try again or reach us on WhatsApp'},
+fNote:{ar:'يصل تسجيلك مباشرة لبريد اللجنة — بياناتك لا تُنشر على الموقع',en:'Your registration goes straight to the committee inbox — your details are not published'},
+okDemo:{ar:'✅ (وضع تجريبي) تمت الإضافة للسجل أدناه — بعد لصق مفتاح Web3Forms سيصل التسجيل لبريد اللجنة أيضاً',en:'✅ (Demo mode) Added to the register below — once the Web3Forms key is pasted, registrations will also reach the committee inbox'},
+okReal:{ar:'✅ تم استلام تسجيلك — ستصلك دعوة مجموعة شارعك على الواتساب قريباً',en:'✅ Registration received — your street group invite will arrive on WhatsApp soon'},
+rgK:{ar:'سجل السكان',en:'Residents Register'},
+rgH:{ar:'هكذا تظهر القائمة بعد التسجيل',en:'How the List Looks After Registration'},
+rgP:{ar:'كل تسجيل جديد يُضاف هنا — يمكن تصفية القائمة حسب الشارع',en:'Every new registration is added here — filter the list by street'},
+rgF:{ar:'عرض:',en:'Show:'},
+rgAll:{ar:'كل الشوارع',en:'All streets'},
+rgCnt:{ar:'ساكناً مسجلاً',en:'registered residents'},
+th1:{ar:'الاسم',en:'Name'},th2:{ar:'الشارع',en:'Street'},th3:{ar:'المبنى / البرج',en:'Building / Tower'},th4:{ar:'الهاتف',en:'Phone'},th5:{ar:'نوع السكن',en:'Type'},th6:{ar:'التاريخ',en:'Date'},
+rgNote:{ar:'🔒 في النسخة النهائية: أرقام الهواتف تظهر مموّهة للعامة وتُعرض كاملة للجنة فقط',en:'🔒 In the final version, phone numbers appear masked to the public and in full to the committee only'},
+ftWa:{ar:'💬 مجموعة اخبار لجنة تسيير العمارات',en:'💬 Al Amarat Committee WhatsApp Group'},
+ftLine:{ar:'لجنة تسيير حي العمارات — في خدمة كل السكان، من شارع ١ إلى شارع ٦١',en:'Al Amarat District Committee — serving every resident, Streets 1 to 61'},
+ftSmall:{ar:'© ٢٠٢٦ بوابة حي العمارات · نسخة تجريبية للعرض على اللجنة',en:'© 2026 Al Amarat Portal · demo version for committee review'},
+none:{ar:'لا يوجد مسجلون بعد — كن الأول!',en:'No one registered yet — be the first!'},
+last:{ar:'آخرهم',en:'latest'},
+waMsg:{ar:n=>'السلام عليكم، أنا من سكان شارع '+n+' وأود الانضمام لمجموعة الشارع',en:n=>'Hello, I live on Street '+n+' and would like to join the street group'}
+};
+const arabicNum=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const num=n=>L==='ar'?arabicNum(n):String(n);
+const stName=n=>L==='ar'?'شارع '+arabicNum(n):'Street '+n;
+const bldgLabel=b=>{
+  if(b==='—')return '—';
+  const map={'برج النيل السكني':T.t1h,'أبراج العمارات الحديثة':T.t2h,'مجمّع شارع ٣٥':T.t3h};
+  return map[b]?map[b][L]:b;
+};
+const typeLabel=t=>{const map={'منزل على الشارع':T.ty1,'شقة في برج / عمارة':T.ty2,'محل / نشاط تجاري':T.ty3};return map[t]?map[t][L]:t;};
+const COMMITTEE_WA='447958289559'; // 07958289559 in international format
+function updateWaLinks(){
+  const hi=encodeURIComponent(T.waHi[L]);
+  document.getElementById('waNav').href='https://wa.me/'+COMMITTEE_WA+'?text='+hi;
+  document.getElementById('footWa').href='https://wa.me/'+COMMITTEE_WA+'?text='+hi;
+  document.getElementById('fabWa').href='https://wa.me/'+COMMITTEE_WA+'?text='+hi;
+}
+
+// =============== Street status (0=pending 1=in progress 2=done) — seeded from group signals ===============
+const streetStatus={
+  1:{p:1,w:0,c:2},3:{p:1,w:0,c:2},5:{p:1,w:0,c:2},7:{p:1,w:0,c:1},9:{p:1,w:0,c:1},
+  11:{p:2,w:1,c:2},13:{p:1,w:0,c:1},15:{p:1,w:1,c:2},
+  21:{p:1,w:0,c:1},25:{p:0,w:0,c:1},31:{p:0,w:0,c:1},
+  35:{p:1,w:1,c:1},37:{p:1,w:0,c:1},41:{p:1,w:0,c:1},
+  47:{p:2,w:1,c:2},49:{p:1,w:0,c:1},51:{p:1,w:0,c:1},61:{p:0,w:0,c:1}
+};
+const getStatus=n=>streetStatus[n]||{p:0,w:0,c:0};
+const stCls=['pend','prog','ok'];
+function applyLang(){
+  document.documentElement.lang=L;
+  document.documentElement.dir=L==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[k])el.textContent=T[k][L];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-ph');
+    if(T[k])el.placeholder=T[k][L];
+  });
+  document.getElementById('langBtn').textContent=L==='ar'?'English':'عربي';
+  document.getElementById('alertTrack').innerHTML=T.alert[L];
+  buildStreets();renderResidents(false);updateTowerCounts();updateWaLinks();renderNews();renderLedger();
+}
+document.getElementById('langBtn').addEventListener('click',()=>{L=L==='ar'?'en':'ar';applyLang();});
+
+// =============== Navigation (iframe-safe smooth scroll) ===============
+function goTo(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('[data-go]').forEach(el=>{
+  el.addEventListener('click',e=>{e.preventDefault();goTo(el.getAttribute('data-go'));
+    const b=el.getAttribute('data-bset');
+    if(b)document.getElementById('jbldg').value=b;
+  });
+});
+const btn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+btn.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const navA=[...links.querySelectorAll('a[data-go]')];
+window.addEventListener('scroll',()=>{
+  let cur='committee';
+  document.querySelectorAll('section, footer').forEach(s=>{if(window.scrollY>=s.offsetTop-140)cur=s.id;});
+  navA.forEach(a=>a.classList.toggle('active',a.getAttribute('data-go')===cur));
+},{passive:true});
+
+// =============== Residents data ===============
+const residents=[
+  {name:'محمد أحمد عثمان',street:15,bldg:'برج النيل السكني',phone:'0912345678',type:'شقة في برج / عمارة',date:'2026-07-01'},
+  {name:'فاطمة الطاهر بابكر',street:15,bldg:'—',phone:'0918822344',type:'منزل على الشارع',date:'2026-07-01'},
+  {name:'عبدالله حسن النور',street:3,bldg:'—',phone:'0123456789',type:'منزل على الشارع',date:'2026-07-02'},
+  {name:'سارة إبراهيم الأمين',street:41,bldg:'أبراج العمارات الحديثة',phone:'0915566778',type:'شقة في برج / عمارة',date:'2026-07-03'},
+  {name:'عثمان خالد موسى',street:41,bldg:'أبراج العمارات الحديثة',phone:'+249911223344',type:'شقة في برج / عمارة',date:'2026-07-03'},
+  {name:'آمنة عوض الكريم',street:35,bldg:'مجمّع شارع ٣٥',phone:'0919988776',type:'شقة في برج / عمارة',date:'2026-07-04'},
+  {name:'الصادق يوسف عبدالرحمن',street:61,bldg:'—',phone:'0124455667',type:'محل / نشاط تجاري',date:'2026-07-05'},
+  {name:'هالة مصطفى الشيخ',street:1,bldg:'—',phone:'0917711223',type:'منزل على الشارع',date:'2026-07-05'}
+];
+const maskPhone=p=>{const d=p.replace(/[^\d+]/g,'');return d.length>6?d.slice(0,4)+'***'+d.slice(-3):d;};
+const fmtDate=iso=>{const[y,m,d]=iso.split('-');return L==='ar'?arabicNum(y)+'/'+arabicNum(m)+'/'+arabicNum(d):d+'/'+m+'/'+y;};
+const countStreet=n=>residents.filter(r=>r.street===n).length;
+
+// =============== Streets grid with live count badges ===============
+const grid=document.getElementById('streetGrid');
+const sel=document.getElementById('jstreet');
+const rsel=document.getElementById('rstreet');
+function buildStreets(){
+  const keep=sel.value, keepR=rsel.value;
+  grid.innerHTML='';sel.innerHTML='';rsel.innerHTML='';
+  for(let n=1;n<=61;n+=2){
+    const c=document.createElement('button');
+    const cnt=countStreet(n);
+    const st=getStatus(n);
+    c.className='street-card'+(cnt?' has-res':'');
+    c.innerHTML=(cnt?'<span class="res-badge">'+num(cnt)+'</span>':'')+
+      '<div class="num">'+num(n)+'</div><div class="lbl">'+T.stLbl[L]+'</div>'+
+      '<div class="st-status"><i class="'+stCls[st.p]+'" title="'+T.uPower[L]+'">⚡</i><i class="'+stCls[st.w]+'" title="'+T.uWater[L]+'">💧</i><i class="'+stCls[st.c]+'" title="'+T.uClean[L]+'">🧹</i></div>';
+    c.addEventListener('click',()=>openStreet(n));
+    grid.appendChild(c);
+    const o=document.createElement('option');
+    o.value=n;o.textContent=stName(n);
+    sel.appendChild(o);
+    rsel.appendChild(o.cloneNode(true));
+  }
+  if(keep)sel.value=keep;
+  if(keepR)rsel.value=keepR;
+}
+
+// =============== Tower counts ===============
+function updateTowerCounts(){
+  document.querySelectorAll('.tower[data-bldg]').forEach(t=>{
+    const b=t.getAttribute('data-bldg');
+    const cnt=residents.filter(r=>r.bldg===b).length;
+    const chip=t.querySelector('.t-count');
+    chip.textContent=(L==='ar'?'👥 '+arabicNum(cnt)+' مسجل':'👥 '+cnt+' registered');
+    chip.classList.toggle('zero',cnt===0);
+  });
+}
+
+// =============== Street modal ===============
+const overlay=document.getElementById('streetOverlay');
+let currentStreet=1;
+function openStreet(n){
+  currentStreet=n;
+  document.getElementById('mTitle').textContent=stName(n);
+  const st=getStatus(n);
+  [['msPower','⚡',T.uPower[L],st.p],['msWater','💧',T.uWater[L],st.w],['msClean','🧹',T.uClean[L],st.c]].forEach(([id,ic,lbl,s])=>{
+    const el=document.getElementById(id);
+    el.className='m-chip '+stCls[s];
+    el.innerHTML=ic+' '+lbl+'<small>'+T['stat'+s][L]+'</small>';
+  });
+  const inStreet=residents.filter(r=>r.street===n);
+  document.getElementById('mCount').textContent=inStreet.length
+    ? num(inStreet.length)+' — '+T.last[L]+': '+inStreet[inStreet.length-1].name
+    : T.none[L];
+  document.getElementById('mWa').href='https://wa.me/?text='+encodeURIComponent(T.waMsg[L](n));
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeStreet(){overlay.classList.remove('open');document.body.style.overflow='';}
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeStreet();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeStreet();});
+function joinFromModal(){closeStreet();sel.value=currentStreet;goTo('join');}
+
+// =============== Residents register table ===============
+const regBody=document.getElementById('regBody');
+const regFilter=document.getElementById('regFilter');
+const regCount=document.getElementById('regCount');
+function renderResidents(highlightLast){
+  const cur=regFilter.value||'all';
+  regFilter.innerHTML='<option value="all">'+T.rgAll[L]+'</option>';
+  [...new Set(residents.map(r=>r.street))].sort((a,b)=>a-b).forEach(s=>{
+    const o=document.createElement('option');
+    o.value=s;o.textContent=stName(s);
+    regFilter.appendChild(o);
+  });
+  regFilter.value=[...regFilter.options].some(o=>o.value===cur)?cur:'all';
+  const f=regFilter.value;
+  const list=residents.filter(r=>f==='all'||r.street===Number(f));
+  regBody.innerHTML='';
+  list.forEach((r,i)=>{
+    const tr=document.createElement('tr');
+    if(highlightLast&&r===residents[residents.length-1])tr.className='new-row';
+    tr.innerHTML='<td>'+num(i+1)+'</td>'+
+      '<td><strong>'+r.name+'</strong></td>'+
+      '<td><span class="st-chip">'+stName(r.street)+'</span></td>'+
+      '<td>'+bldgLabel(r.bldg)+'</td>'+
+      '<td class="phone">'+maskPhone(r.phone)+'</td>'+
+      '<td>'+typeLabel(r.type)+'</td>'+
+      '<td>'+fmtDate(r.date)+'</td>';
+    regBody.appendChild(tr);
+  });
+  regCount.textContent=num(list.length)+' '+T.rgCnt[L];
+}
+regFilter.addEventListener('change',()=>renderResidents(false));
+
+// =============== Registration ===============
+const WEB3FORMS_ACCESS_KEY="YOUR_ACCESS_KEY_HERE"; // ← paste your Web3Forms key here
+function setInvalid(id,bad){document.getElementById(id).closest('.field').classList.toggle('invalid',bad);return !bad;}
+function validPhone(v){const p=v.replace(/[\s-]/g,'');return /^(\+?249)?0?(9|1)\d{8}$/.test(p)||/^0(9|1)\d{8}$/.test(p);}
+async function submitJoin(){
+  const name=document.getElementById('jname').value.trim();
+  const phone=document.getElementById('jphone').value.trim();
+  const okName=setInvalid('jname',name.length<2);
+  const okPhone=setInvalid('jphone',!validPhone(phone));
+  if(!okName||!okPhone)return;
+  if(document.getElementById('botcheck').checked)return;
+  const streetNo=Number(sel.value);
+  const bldg=document.getElementById('jbldg').value.trim()||'—';
+  const typeKey=document.querySelector('input[name="jtype"]:checked').parentElement.querySelector('span').getAttribute('data-i18n');
+  const typeAr=T[typeKey].ar;
+  const btnEl=document.getElementById('submitBtn');
+  const ok=document.getElementById('formOk'),er=document.getElementById('formErr');
+  ok.style.display='none';er.style.display='none';
+  const addToList=()=>{
+    const t=new Date();
+    const iso=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+    residents.push({name,street:streetNo,bldg,phone,type:typeAr,date:iso});
+    regFilter.value='all';
+    renderResidents(true);buildStreets();updateTowerCounts();
+    confetti();
+    goTo('residents');
+  };
+  if(WEB3FORMS_ACCESS_KEY==='YOUR_ACCESS_KEY_HERE'){
+    addToList();
+    ok.textContent=T.okDemo[L];ok.style.display='block';
+    document.getElementById('jname').value='';
+    return;
+  }
+  btnEl.disabled=true;btnEl.textContent=T.fBtnW[L];
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({
+        access_key:WEB3FORMS_ACCESS_KEY,
+        subject:'تسجيل جديد — بوابة حي العمارات — شارع '+arabicNum(streetNo),
+        from_name:'بوابة حي العمارات',
+        'الاسم':name,'الهاتف':phone,'الشارع':'شارع '+arabicNum(streetNo),
+        'البرج/المبنى':bldg,'نوع السكن':typeAr
+      })
+    });
+    const data=await res.json();
+    if(data.success){
+      addToList();
+      ok.textContent=T.okReal[L];ok.style.display='block';
+      document.getElementById('jname').value='';
+      document.getElementById('jbldg').value='';
+    }else{er.style.display='block';}
+  }catch(e){er.style.display='block';}
+  btnEl.disabled=false;btnEl.textContent=T.fBtn[L];
+}
+['jname','jphone'].forEach(id=>document.getElementById(id).addEventListener('input',()=>setInvalid(id,false)));
+
+// =============== News archive (drawn from real group themes) ===============
+const NEWS=[
+ {cat:'power',d:'2026-07-06',t:{ar:'عودة التيار الكهربائي لشارع ١١',en:'Power restored to Street 11'},b:{ar:'بعد جهد كبير من السكان والمهندسين، عاد التيار الكهربائي لناصية شارع ١١ — وأعمال الصيانة مستمرة في بقية الشوارع.',en:'After great effort by residents and engineers, power is back at the Street 11 corner — maintenance continues elsewhere.'}},
+ {cat:'sec',d:'2026-07-04',t:{ar:'تحذير: سرقة كوابل النحاس',en:'Warning: copper cable theft'},b:{ar:'بلاغات متكررة عن سرقة كوابل الكهرباء النحاسية وتصديرها — الرجاء الإبلاغ الفوري عن أي نشاط مشبوه.',en:'Repeated reports of copper power-cable theft. Please report any suspicious activity immediately.'}},
+ {cat:'clean',d:'2026-07-02',t:{ar:'حملة إزالة مخلفات الحرب مستمرة',en:'War-debris clearance continues'},b:{ar:'٢٢ دفاراً ولودرات تعمل يومياً بتكلفة تشغيلية ضخمة — كل الشكر للقائمين والمتبرعين.',en:'22 trucks and loaders working daily at huge operating cost — thanks to all volunteers and donors.'}},
+ {cat:'clean',d:'2026-06-28',t:{ar:'حملات رش ضد حمى الضنك والملاريا',en:'Spraying drives against dengue & malaria'},b:{ar:'انطلقت حملات الرش للتخلص من آفات حمى الضنك والملاريا ضمن أولويات المرحلة.',en:'Spraying campaigns launched to fight dengue and malaria as a priority of this phase.'}},
+ {cat:'water',d:'2026-06-25',t:{ar:'المياه النظيفة ضمن أولويات اللجنة',en:'Clean water among committee priorities'},b:{ar:'العمل جارٍ على ملف المياه النظيفة بالتوازي مع النظافة والكهرباء.',en:'Work on clean water proceeds in parallel with cleaning and power.'}},
+ {cat:'power',d:'2026-06-22',t:{ar:'خطة إعادة التيار شارعاً بشارع',en:'Street-by-street restoration plan'},b:{ar:'شبكات الكهرباء تُعاد بالتدريج من شارع ١ إلى شارع ٦١ حسب جاهزية كل شارع.',en:'The grid is being restored gradually from Street 1 to 61 by readiness.'}}
+];
+let newsCat='all';
+function renderNews(){
+  const wrapF=document.getElementById('newsFilters');
+  wrapF.innerHTML='';
+  [['all','fltAll'],['power','fltPower'],['clean','fltClean'],['sec','fltSec'],['water','fltWater']].forEach(([c,k])=>{
+    const b=document.createElement('button');
+    b.className='chip'+(newsCat===c?' on':'');
+    b.textContent=T[k][L];
+    b.addEventListener('click',()=>{newsCat=c;renderNews();});
+    wrapF.appendChild(b);
+  });
+  const list=document.getElementById('newsList');
+  list.innerHTML='';
+  NEWS.filter(n=>newsCat==='all'||n.cat===newsCat).forEach(n=>{
+    const el=document.createElement('article');
+    el.className='news-item cat-'+n.cat;
+    el.innerHTML='<h3>'+n.t[L]+'</h3><p>'+n.b[L]+'</p><div class="nmeta"><span>📅 '+fmtDate(n.d)+'</span></div>';
+    list.appendChild(el);
+  });
+}
+
+// =============== Transparency ledger (illustrative) ===============
+const LEDGER=[
+ {d:'2026-06-20',t:{ar:'تبرعات السكان — الدفعة الأولى (بنكك)',en:'Resident donations — first batch (Bankak)'},i:25000000,o:0},
+ {d:'2026-06-23',t:{ar:'جاز للدفارات واللودرات',en:'Fuel for trucks & loaders'},i:0,o:9680000},
+ {d:'2026-06-26',t:{ar:'أجور عمال وسواقين — أسبوع ١',en:'Workers & drivers wages — week 1'},i:0,o:6400000},
+ {d:'2026-06-29',t:{ar:'تبرعات المغتربين — الدفعة الثانية',en:'Diaspora donations — second batch'},i:18500000,o:0},
+ {d:'2026-07-02',t:{ar:'مواد رش ومكافحة حشرات',en:'Spraying & pest-control materials'},i:0,o:3150000},
+ {d:'2026-07-05',t:{ar:'صيانة كوابل ومعدات كهرباء',en:'Cable & electrical equipment repairs'},i:0,o:7250000}
+];
+function renderLedger(){
+  const tb=document.getElementById('ledgerBody');
+  tb.innerHTML='';
+  let bal=0;
+  LEDGER.forEach(r=>{
+    bal+=r.i-r.o;
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+fmtDate(r.d)+'</td><td>'+r.t[L]+'</td>'+
+      '<td class="amt-in">'+(r.i?num(r.i.toLocaleString('en-US'))+'':'—')+'</td>'+
+      '<td class="amt-out">'+(r.o?num(r.o.toLocaleString('en-US')):'—')+'</td>';
+    tb.appendChild(tr);
+  });
+  const unit=L==='ar'?' جنيه':' SDG';
+  document.getElementById('ledgerBal').textContent=num(bal.toLocaleString('en-US'))+unit;
+}
+
+// =============== FAB ===============
+const fabWrap=document.getElementById('fabWrap');
+document.getElementById('fabMain').addEventListener('click',()=>fabWrap.classList.toggle('open'));
+fabWrap.querySelectorAll('.fab-btn[data-go],.fab-btn[href]').forEach(el=>el.addEventListener('click',()=>fabWrap.classList.remove('open')));
+document.addEventListener('click',e=>{if(!fabWrap.contains(e.target))fabWrap.classList.remove('open');});
+
+// =============== Report a problem → WhatsApp ===============
+function sendReport(){
+  const desc=document.getElementById('rdesc').value.trim();
+  const bad=desc.length<5;
+  document.getElementById('rdesc').closest('.field').classList.toggle('invalid',bad);
+  if(bad)return;
+  const typeSel=document.getElementById('rtype');
+  const typeKey=typeSel.options[typeSel.selectedIndex].getAttribute('data-i18n');
+  const typeTxt=T[typeKey][L];
+  const streetTxt=stName(Number(rsel.value));
+  const lbl=L==='ar'?['النوع','الشارع','الوصف']:['Type','Street','Description'];
+  const msg=T.rpMsg[L]+'\n'+lbl[0]+': '+typeTxt+'\n'+lbl[1]+': '+streetTxt+'\n'+lbl[2]+': '+desc;
+  window.open('https://wa.me/'+COMMITTEE_WA+'?text='+encodeURIComponent(msg),'_blank');
+}
+document.getElementById('rdesc').addEventListener('input',()=>document.getElementById('rdesc').closest('.field').classList.remove('invalid'));
+
+// =============== Init ===============
+buildStreets();renderResidents(false);updateTowerCounts();updateWaLinks();renderNews();renderLedger();
+
+// =============== Scroll reveal ===============
+document.querySelectorAll('.sec-head,.about-intro,.acard,.fig-card,.board,.roles,.legend,.street-grid,.street-hint,.tower,.form-card,.reg-bar,.reg-wrap,.reg-note,.report-card,.news-filters,.news-list,.bank-card,.ledger-wrap,.hcard,.ba-card,.ba-note').forEach(el=>el.classList.add('reveal'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// =============== Confetti ===============
+function confetti(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const colors=['#C9A227','#A94A32','#0F3D3E','#F2DA8A','#2C7A7B'];
+  for(let i=0;i<60;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    const s=6+Math.random()*8;
+    c.style.width=s+'px';c.style.height=(s*0.6)+'px';
+    c.style.left=(Math.random()*100)+'vw';
+    c.style.background=colors[i%colors.length];
+    c.style.animationDuration=(1.6+Math.random()*1.6)+'s';
+    c.style.animationDelay=(Math.random()*.4)+'s';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3600);
+  }
+}
+</script>
+</body>
+</html>
